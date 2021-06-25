@@ -1,6 +1,6 @@
 # quiz_web
 
-A new Flutter project.
+Quiz webapp made with Flutter
 
 ## Getting Started
 
