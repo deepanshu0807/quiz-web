@@ -25,9 +25,9 @@ class TextInputCustomField extends StatelessWidget {
     final isPassword = textInputType == TextInputType.visiblePassword;
     final isNumber = textInputType == TextInputType.phone;
     final outlineInputBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: kBorderR10,
       borderSide: BorderSide(
-          color: Colors.grey[100], width: 2, style: BorderStyle.solid),
+          color: Colors.grey[300], width: 2, style: BorderStyle.solid),
     );
     final hidePasswordNotifier = ValueNotifier(true);
     return ValueListenableBuilder(

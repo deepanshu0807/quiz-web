@@ -6,21 +6,20 @@ class BorderButton extends StatelessWidget {
     Key key,
     this.text,
     this.ontap,
+    this.width = 0.0,
   }) : super(key: key);
   final String text;
   final Function ontap;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-      minWidth: double.infinity,
-      padding: kPadding10.copyWith(left: 20),
+      minWidth: width,
+      padding: kPadding20,
       onPressed: ontap,
-      splashColor: Colors.transparent,
-      highlightColor: Colors.transparent,
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: Colors.black, width: 2),
-        borderRadius: kBorderR10,
+        side: BorderSide(color: Colors.black, width: 1),
       ),
       child: Row(
         children: [
