@@ -28,23 +28,31 @@
 
   <title>quiz_web</title>
   <link rel="manifest" href="manifest.json">
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAzJGgtHTFgKzYw2FKSn2p2wyw51WRlPVM",
+        authDomain: "quiz-app-navigus.firebaseapp.com",
+        projectId: "quiz-app-navigus",
+        storageBucket: "quiz-app-navigus.appspot.com",
+        messagingSenderId: "979324111319",
+        appId: "1:979324111319:web:73d426b39b7ad1ea7fa392"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+
 </head>
 <body>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyAzJGgtHTFgKzYw2FKSn2p2wyw51WRlPVM",
-      authDomain: "quiz-app-navigus.firebaseapp.com",
-      projectId: "quiz-app-navigus",
-      storageBucket: "quiz-app-navigus.appspot.com",
-      messagingSenderId: "979324111319",
-      appId: "1:979324111319:web:73d426b39b7ad1ea7fa392"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
+ 
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
