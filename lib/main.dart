@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_shared/quiz_shared.dart';
-import 'package:quiz_web/presentation/screens/auth/login.dart';
+import 'package:quiz_web/application/add_quiz_form_bloc/add_quiz_form_bloc.dart';
 import 'package:quiz_web/presentation/screens/splashscreen.dart';
 
 import 'application/add_course_form_bloc/add_course_form_bloc.dart';
@@ -52,6 +52,7 @@ class MyApp extends StatelessWidget {
             BlocProvider(create: (_) => getIt<SignupFormBloc>()),
             BlocProvider(create: (_) => getIt<UserDetailsFormBloc>()),
             BlocProvider(create: (_) => getIt<AddCourseFormBloc>()),
+            BlocProvider(create: (_) => getIt<AddQuizFormBloc>()),
           ],
           child: MaterialApp(
             title: 'Quizzy',

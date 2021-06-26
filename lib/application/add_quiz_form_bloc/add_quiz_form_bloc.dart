@@ -36,7 +36,7 @@ class AddQuizFormBloc extends Bloc<AddQuizFormEvent, AddQuizFormState> {
 
   Stream<AddQuizFormState> _addThisQuestion(_EvAddThisQues value) async* {
     final currentQuestions = state.quiz.questions.firstWhere(
-      (element) => element.id == value.ques.id,
+      (element) => element.question == value.ques.question,
       orElse: () => null,
     );
 
