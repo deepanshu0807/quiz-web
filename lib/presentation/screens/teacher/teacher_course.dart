@@ -3,6 +3,7 @@ import 'package:quiz_shared/domain/user/user.dart';
 import 'package:quiz_shared/quiz_shared.dart';
 import 'package:quiz_web/application/add_course_form_bloc/add_course_form_bloc.dart';
 import 'package:quiz_web/application/course_watcher_bloc/course_watcher_bloc.dart';
+import 'package:quiz_web/presentation/screens/teacher/add_quiz.dart';
 import 'package:quiz_web/presentation/utils/utility.dart';
 import 'package:quiz_web/presentation/widgets/loading.dart';
 import 'package:quiz_web/presentation/widgets/text_input_field.dart';
@@ -157,7 +158,19 @@ class _TeacherCourseState extends State<TeacherCourse> {
                                       children: [
                                         FlatButton(
                                           shape: kRoundedShape,
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            if (thisc.hasQuiz) {
+                                            } else {
+                                              Navigator.of(context).push(
+                                                PageRouteBuilder(
+                                                    opaque: false,
+                                                    pageBuilder: (_, __, ___) =>
+                                                        AddQuiz(
+                                                          course: thisc,
+                                                        )),
+                                              );
+                                            }
+                                          },
                                           color: Colors.white60,
                                           child: Text(
                                             thisc.hasQuiz
@@ -169,7 +182,12 @@ class _TeacherCourseState extends State<TeacherCourse> {
                                         FlatButton(
                                             shape: kRoundedShape,
                                             minWidth: 0,
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              context
+                                                  .read<AddCourseFormBloc>()
+                                                  .add(AddCourseFormEvent
+                                                      .deleteIsClicked(thisc));
+                                            },
                                             color: Colors.white60,
                                             child: Icon(
                                               Icons.delete,
