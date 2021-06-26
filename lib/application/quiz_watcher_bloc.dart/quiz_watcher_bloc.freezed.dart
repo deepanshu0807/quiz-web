@@ -14,7 +14,7 @@ class _$QuizWatcherEventTearOff {
   const _$QuizWatcherEventTearOff();
 
 // ignore: unused_element
-  _GetQuizes getAllCourses() {
+  _GetQuizes getAllQuizes() {
     return const _GetQuizes();
   }
 
@@ -34,23 +34,23 @@ const $QuizWatcherEvent = _$QuizWatcherEventTearOff();
 mixin _$QuizWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result getAllCourses(),
+    @required Result getAllQuizes(),
     @required Result quizReceived(Either<InfraFailure, List<Quiz>> quizes),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result getAllCourses(),
+    Result getAllQuizes(),
     Result quizReceived(Either<InfraFailure, List<Quiz>> quizes),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result getAllCourses(_GetQuizes value),
+    @required Result getAllQuizes(_GetQuizes value),
     @required Result quizReceived(_QuizesReceived value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result getAllCourses(_GetQuizes value),
+    Result getAllQuizes(_GetQuizes value),
     Result quizReceived(_QuizesReceived value),
     @required Result orElse(),
   });
@@ -97,7 +97,7 @@ class _$_GetQuizes implements _GetQuizes {
 
   @override
   String toString() {
-    return 'QuizWatcherEvent.getAllCourses()';
+    return 'QuizWatcherEvent.getAllQuizes()';
   }
 
   @override
@@ -111,24 +111,24 @@ class _$_GetQuizes implements _GetQuizes {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result getAllCourses(),
+    @required Result getAllQuizes(),
     @required Result quizReceived(Either<InfraFailure, List<Quiz>> quizes),
   }) {
-    assert(getAllCourses != null);
+    assert(getAllQuizes != null);
     assert(quizReceived != null);
-    return getAllCourses();
+    return getAllQuizes();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result getAllCourses(),
+    Result getAllQuizes(),
     Result quizReceived(Either<InfraFailure, List<Quiz>> quizes),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (getAllCourses != null) {
-      return getAllCourses();
+    if (getAllQuizes != null) {
+      return getAllQuizes();
     }
     return orElse();
   }
@@ -136,24 +136,24 @@ class _$_GetQuizes implements _GetQuizes {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result getAllCourses(_GetQuizes value),
+    @required Result getAllQuizes(_GetQuizes value),
     @required Result quizReceived(_QuizesReceived value),
   }) {
-    assert(getAllCourses != null);
+    assert(getAllQuizes != null);
     assert(quizReceived != null);
-    return getAllCourses(this);
+    return getAllQuizes(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result getAllCourses(_GetQuizes value),
+    Result getAllQuizes(_GetQuizes value),
     Result quizReceived(_QuizesReceived value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (getAllCourses != null) {
-      return getAllCourses(this);
+    if (getAllQuizes != null) {
+      return getAllQuizes(this);
     }
     return orElse();
   }
@@ -225,10 +225,10 @@ class _$_QuizesReceived implements _QuizesReceived {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result getAllCourses(),
+    @required Result getAllQuizes(),
     @required Result quizReceived(Either<InfraFailure, List<Quiz>> quizes),
   }) {
-    assert(getAllCourses != null);
+    assert(getAllQuizes != null);
     assert(quizReceived != null);
     return quizReceived(quizes);
   }
@@ -236,7 +236,7 @@ class _$_QuizesReceived implements _QuizesReceived {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result getAllCourses(),
+    Result getAllQuizes(),
     Result quizReceived(Either<InfraFailure, List<Quiz>> quizes),
     @required Result orElse(),
   }) {
@@ -250,10 +250,10 @@ class _$_QuizesReceived implements _QuizesReceived {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result getAllCourses(_GetQuizes value),
+    @required Result getAllQuizes(_GetQuizes value),
     @required Result quizReceived(_QuizesReceived value),
   }) {
-    assert(getAllCourses != null);
+    assert(getAllQuizes != null);
     assert(quizReceived != null);
     return quizReceived(this);
   }
@@ -261,7 +261,7 @@ class _$_QuizesReceived implements _QuizesReceived {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result getAllCourses(_GetQuizes value),
+    Result getAllQuizes(_GetQuizes value),
     Result quizReceived(_QuizesReceived value),
     @required Result orElse(),
   }) {

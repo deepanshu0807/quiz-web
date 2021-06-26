@@ -21,7 +21,7 @@ class QuizWatcherBloc extends Bloc<QuizWatcherEvent, QuizWatcherState> {
     QuizWatcherEvent event,
   ) async* {
     yield* event.map(
-      getAllCourses: (e) async* {
+      getAllQuizes: (e) async* {
         yield const QuizWatcherState.loadInProgress();
         _iQuizRepository
             .getAllQuiz()

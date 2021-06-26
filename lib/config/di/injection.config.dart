@@ -11,18 +11,20 @@ import 'package:quiz_shared/domain/user/i_quizeuser_repo.dart' as _i5;
 import 'package:quiz_shared/quiz_shared.dart' as _i3;
 
 import '../../application/add_course_form_bloc/add_course_form_bloc.dart'
-    as _i12;
-import '../../application/add_quiz_form_bloc/add_quiz_form_bloc.dart' as _i13;
+    as _i13;
+import '../../application/add_quiz_form_bloc/add_quiz_form_bloc.dart' as _i14;
 import '../../application/auth/sign_up_form_bloc/signup_form_bloc.dart' as _i9;
 import '../../application/auth/signinform/signinform_bloc.dart' as _i8;
-import '../../application/course_watcher_bloc/course_watcher_bloc.dart' as _i14;
+import '../../application/course_watcher_bloc/course_watcher_bloc.dart' as _i15;
 import '../../application/landing_page_bloc/landingpage_bloc.dart' as _i6;
 import '../../application/quiz_watcher_bloc.dart/quiz_watcher_bloc.dart' as _i7;
-import '../../application/user_details_form_bloc/user_details_form_bloc.dart'
+import '../../application/submission_form_bloc/submission_form_bloc.dart'
     as _i10;
-import '../../application/user_details_watcher/user_details_watcher_bloc.dart'
+import '../../application/user_details_form_bloc/user_details_form_bloc.dart'
     as _i11;
-import 'injectables.dart' as _i15; // ignore_for_file: unnecessary_lambdas
+import '../../application/user_details_watcher/user_details_watcher_bloc.dart'
+    as _i12;
+import 'injectables.dart' as _i16; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -42,17 +44,19 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i7.QuizWatcherBloc(get<_i4.IQuizRepo>()));
   gh.factory<_i8.SigninformBloc>(() => _i8.SigninformBloc(get<_i3.IAuth>()));
   gh.factory<_i9.SignupFormBloc>(() => _i9.SignupFormBloc(get<_i3.IAuth>()));
-  gh.lazySingleton<_i10.UserDetailsFormBloc>(
-      () => _i10.UserDetailsFormBloc(get<_i5.IQuizUserRepo>()));
-  gh.lazySingleton<_i11.UserDetailsWatcherBloc>(
-      () => _i11.UserDetailsWatcherBloc(get<_i5.IQuizUserRepo>()));
-  gh.factory<_i12.AddCourseFormBloc>(
-      () => _i12.AddCourseFormBloc(get<_i4.IQuizRepo>()));
-  gh.lazySingleton<_i13.AddQuizFormBloc>(
-      () => _i13.AddQuizFormBloc(get<_i4.IQuizRepo>()));
-  gh.factory<_i14.CourseWatcherBloc>(
-      () => _i14.CourseWatcherBloc(get<_i4.IQuizRepo>()));
+  gh.factory<_i10.SubmissionFormBloc>(
+      () => _i10.SubmissionFormBloc(get<_i4.IQuizRepo>()));
+  gh.lazySingleton<_i11.UserDetailsFormBloc>(
+      () => _i11.UserDetailsFormBloc(get<_i5.IQuizUserRepo>()));
+  gh.lazySingleton<_i12.UserDetailsWatcherBloc>(
+      () => _i12.UserDetailsWatcherBloc(get<_i5.IQuizUserRepo>()));
+  gh.factory<_i13.AddCourseFormBloc>(
+      () => _i13.AddCourseFormBloc(get<_i4.IQuizRepo>()));
+  gh.lazySingleton<_i14.AddQuizFormBloc>(
+      () => _i14.AddQuizFormBloc(get<_i4.IQuizRepo>()));
+  gh.factory<_i15.CourseWatcherBloc>(
+      () => _i15.CourseWatcherBloc(get<_i4.IQuizRepo>()));
   return get;
 }
 
-class _$BlocInjectablemodule extends _i15.BlocInjectablemodule {}
+class _$BlocInjectablemodule extends _i16.BlocInjectablemodule {}
