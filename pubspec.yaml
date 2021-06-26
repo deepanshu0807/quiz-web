@@ -23,6 +23,7 @@ dependencies:
   rounded_loading_button:
   flutter_spinkit:
   auto_route:
+  quiver:
 
 dev_dependencies:
   flutter_test:
