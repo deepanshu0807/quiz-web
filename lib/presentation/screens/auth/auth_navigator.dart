@@ -33,13 +33,16 @@ class AuthNavigator extends StatelessWidget {
                 context
                     .read<UserDetailsFormBloc>()
                     .add(UserDetailsFormEv.initializeUser(authUser.user));
+
                 Future.delayed(
                   const Duration(milliseconds: 1500),
                   () {
                     Navigator.pushReplacement(
                         context,
                         CupertinoPageRoute(
-                            builder: (context) => LandingPage()));
+                            builder: (context) => LandingPage(
+                                  user: authUser.user,
+                                )));
                   },
                 );
               },

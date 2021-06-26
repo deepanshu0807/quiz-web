@@ -4,8 +4,11 @@ import 'package:quiz_shared/quiz_shared.dart';
 import 'package:quiz_web/presentation/screens/auth/login.dart';
 import 'package:quiz_web/presentation/screens/splashscreen.dart';
 
+import 'application/add_course_form_bloc/add_course_form_bloc.dart';
 import 'application/auth/sign_up_form_bloc/signup_form_bloc.dart';
 import 'application/auth/signinform/signinform_bloc.dart';
+import 'application/course_watcher_bloc/course_watcher_bloc.dart';
+import 'application/landing_page_bloc/landingpage_bloc.dart';
 import 'application/user_details_form_bloc/user_details_form_bloc.dart';
 import 'application/user_details_watcher/user_details_watcher_bloc.dart';
 import 'config/di/injection.dart';
@@ -35,16 +38,26 @@ class MyApp extends StatelessWidget {
                   const AuthWatcherEvent.authCheckRequested(),
                 ),
             ),
+            BlocProvider(
+              create: (_) => getIt<LandingpageBloc>(),
+            ),
+            BlocProvider(
+              create: (_) => getIt<CourseWatcherBloc>()
+                ..add(
+                  const CourseWatcherEvent.getAllCourses(),
+                ),
+            ),
             BlocProvider(create: (_) => getIt<UserDetailsWatcherBloc>()),
             BlocProvider(create: (_) => getIt<SigninformBloc>()),
             BlocProvider(create: (_) => getIt<SignupFormBloc>()),
             BlocProvider(create: (_) => getIt<UserDetailsFormBloc>()),
+            BlocProvider(create: (_) => getIt<AddCourseFormBloc>()),
           ],
           child: MaterialApp(
             title: 'Quizzy',
             debugShowCheckedModeBanner: false,
-            // home: SplashScreen(),
-            home: LoginScreen(),
+            home: SplashScreen(),
+            //home: LoginScreen(),
           ),
         );
       },

@@ -1,4 +1,6 @@
+import 'package:quiz_shared/domain/quiz/i_quiz_repo.dart';
 import 'package:quiz_shared/domain/user/i_quizeuser_repo.dart';
+import 'package:quiz_shared/infrastructure/quiz/quiz_repo.dart';
 import 'package:quiz_shared/infrastructure/user/quiz_user_repo.dart';
 import 'package:quiz_shared/quiz_shared.dart';
 
@@ -22,6 +24,9 @@ abstract class BlocInjectablemodule {
 
   @LazySingleton(as: IQuizUserRepo)
   QuizUserRepo get quizUserRepo => QuizUserRepo(fStore);
+
+  @LazySingleton(as: IQuizRepo)
+  QuizRepo get quizRepo => QuizRepo(fStore);
 
   //Blocs
   @injectable

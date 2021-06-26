@@ -32,12 +32,6 @@ class SignupFormBloc extends Bloc<SignupFormEvent, SignupFormState> {
           signUpSuccessOrFailure: none(),
         );
       },
-      phoneChanged: (e) async* {
-        yield state.copyWith(
-          phoneNumber: PhoneNumber(e.number),
-          signUpSuccessOrFailure: none(),
-        );
-      },
       passwordChanged: (e) async* {
         yield state.copyWith(
           password: Password(e.pwd),

@@ -28,13 +28,6 @@ class _$SignupFormEventTearOff {
   }
 
 // ignore: unused_element
-  _EvPhoneChanged phoneChanged(String number) {
-    return _EvPhoneChanged(
-      number,
-    );
-  }
-
-// ignore: unused_element
   EvPasswordChanged passwordChanged(String pwd) {
     return EvPasswordChanged(
       pwd,
@@ -59,7 +52,6 @@ mixin _$SignupFormEvent {
   Result when<Result extends Object>({
     @required Result nameChanged(String name),
     @required Result emailChanged(String email),
-    @required Result phoneChanged(String number),
     @required Result passwordChanged(String pwd),
     @required Result registerPressed(UserRole role),
   });
@@ -67,7 +59,6 @@ mixin _$SignupFormEvent {
   Result maybeWhen<Result extends Object>({
     Result nameChanged(String name),
     Result emailChanged(String email),
-    Result phoneChanged(String number),
     Result passwordChanged(String pwd),
     Result registerPressed(UserRole role),
     @required Result orElse(),
@@ -76,7 +67,6 @@ mixin _$SignupFormEvent {
   Result map<Result extends Object>({
     @required Result nameChanged(_EvNameChanged value),
     @required Result emailChanged(_EvEmailChanged value),
-    @required Result phoneChanged(_EvPhoneChanged value),
     @required Result passwordChanged(EvPasswordChanged value),
     @required Result registerPressed(EvRegisterPressed value),
   });
@@ -84,7 +74,6 @@ mixin _$SignupFormEvent {
   Result maybeMap<Result extends Object>({
     Result nameChanged(_EvNameChanged value),
     Result emailChanged(_EvEmailChanged value),
-    Result phoneChanged(_EvPhoneChanged value),
     Result passwordChanged(EvPasswordChanged value),
     Result registerPressed(EvRegisterPressed value),
     @required Result orElse(),
@@ -178,13 +167,11 @@ class _$_EvNameChanged with DiagnosticableTreeMixin implements _EvNameChanged {
   Result when<Result extends Object>({
     @required Result nameChanged(String name),
     @required Result emailChanged(String email),
-    @required Result phoneChanged(String number),
     @required Result passwordChanged(String pwd),
     @required Result registerPressed(UserRole role),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
-    assert(phoneChanged != null);
     assert(passwordChanged != null);
     assert(registerPressed != null);
     return nameChanged(name);
@@ -195,7 +182,6 @@ class _$_EvNameChanged with DiagnosticableTreeMixin implements _EvNameChanged {
   Result maybeWhen<Result extends Object>({
     Result nameChanged(String name),
     Result emailChanged(String email),
-    Result phoneChanged(String number),
     Result passwordChanged(String pwd),
     Result registerPressed(UserRole role),
     @required Result orElse(),
@@ -212,13 +198,11 @@ class _$_EvNameChanged with DiagnosticableTreeMixin implements _EvNameChanged {
   Result map<Result extends Object>({
     @required Result nameChanged(_EvNameChanged value),
     @required Result emailChanged(_EvEmailChanged value),
-    @required Result phoneChanged(_EvPhoneChanged value),
     @required Result passwordChanged(EvPasswordChanged value),
     @required Result registerPressed(EvRegisterPressed value),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
-    assert(phoneChanged != null);
     assert(passwordChanged != null);
     assert(registerPressed != null);
     return nameChanged(this);
@@ -229,7 +213,6 @@ class _$_EvNameChanged with DiagnosticableTreeMixin implements _EvNameChanged {
   Result maybeMap<Result extends Object>({
     Result nameChanged(_EvNameChanged value),
     Result emailChanged(_EvEmailChanged value),
-    Result phoneChanged(_EvPhoneChanged value),
     Result passwordChanged(EvPasswordChanged value),
     Result registerPressed(EvRegisterPressed value),
     @required Result orElse(),
@@ -321,13 +304,11 @@ class _$_EvEmailChanged
   Result when<Result extends Object>({
     @required Result nameChanged(String name),
     @required Result emailChanged(String email),
-    @required Result phoneChanged(String number),
     @required Result passwordChanged(String pwd),
     @required Result registerPressed(UserRole role),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
-    assert(phoneChanged != null);
     assert(passwordChanged != null);
     assert(registerPressed != null);
     return emailChanged(email);
@@ -338,7 +319,6 @@ class _$_EvEmailChanged
   Result maybeWhen<Result extends Object>({
     Result nameChanged(String name),
     Result emailChanged(String email),
-    Result phoneChanged(String number),
     Result passwordChanged(String pwd),
     Result registerPressed(UserRole role),
     @required Result orElse(),
@@ -355,13 +335,11 @@ class _$_EvEmailChanged
   Result map<Result extends Object>({
     @required Result nameChanged(_EvNameChanged value),
     @required Result emailChanged(_EvEmailChanged value),
-    @required Result phoneChanged(_EvPhoneChanged value),
     @required Result passwordChanged(EvPasswordChanged value),
     @required Result registerPressed(EvRegisterPressed value),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
-    assert(phoneChanged != null);
     assert(passwordChanged != null);
     assert(registerPressed != null);
     return emailChanged(this);
@@ -372,7 +350,6 @@ class _$_EvEmailChanged
   Result maybeMap<Result extends Object>({
     Result nameChanged(_EvNameChanged value),
     Result emailChanged(_EvEmailChanged value),
-    Result phoneChanged(_EvPhoneChanged value),
     Result passwordChanged(EvPasswordChanged value),
     Result registerPressed(EvRegisterPressed value),
     @required Result orElse(),
@@ -390,149 +367,6 @@ abstract class _EvEmailChanged implements SignupFormEvent {
 
   String get email;
   _$EvEmailChangedCopyWith<_EvEmailChanged> get copyWith;
-}
-
-/// @nodoc
-abstract class _$EvPhoneChangedCopyWith<$Res> {
-  factory _$EvPhoneChangedCopyWith(
-          _EvPhoneChanged value, $Res Function(_EvPhoneChanged) then) =
-      __$EvPhoneChangedCopyWithImpl<$Res>;
-  $Res call({String number});
-}
-
-/// @nodoc
-class __$EvPhoneChangedCopyWithImpl<$Res>
-    extends _$SignupFormEventCopyWithImpl<$Res>
-    implements _$EvPhoneChangedCopyWith<$Res> {
-  __$EvPhoneChangedCopyWithImpl(
-      _EvPhoneChanged _value, $Res Function(_EvPhoneChanged) _then)
-      : super(_value, (v) => _then(v as _EvPhoneChanged));
-
-  @override
-  _EvPhoneChanged get _value => super._value as _EvPhoneChanged;
-
-  @override
-  $Res call({
-    Object number = freezed,
-  }) {
-    return _then(_EvPhoneChanged(
-      number == freezed ? _value.number : number as String,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_EvPhoneChanged
-    with DiagnosticableTreeMixin
-    implements _EvPhoneChanged {
-  const _$_EvPhoneChanged(this.number) : assert(number != null);
-
-  @override
-  final String number;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SignupFormEvent.phoneChanged(number: $number)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignupFormEvent.phoneChanged'))
-      ..add(DiagnosticsProperty('number', number));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _EvPhoneChanged &&
-            (identical(other.number, number) ||
-                const DeepCollectionEquality().equals(other.number, number)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(number);
-
-  @override
-  _$EvPhoneChangedCopyWith<_EvPhoneChanged> get copyWith =>
-      __$EvPhoneChangedCopyWithImpl<_EvPhoneChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nameChanged(String name),
-    @required Result emailChanged(String email),
-    @required Result phoneChanged(String number),
-    @required Result passwordChanged(String pwd),
-    @required Result registerPressed(UserRole role),
-  }) {
-    assert(nameChanged != null);
-    assert(emailChanged != null);
-    assert(phoneChanged != null);
-    assert(passwordChanged != null);
-    assert(registerPressed != null);
-    return phoneChanged(number);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nameChanged(String name),
-    Result emailChanged(String email),
-    Result phoneChanged(String number),
-    Result passwordChanged(String pwd),
-    Result registerPressed(UserRole role),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (phoneChanged != null) {
-      return phoneChanged(number);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nameChanged(_EvNameChanged value),
-    @required Result emailChanged(_EvEmailChanged value),
-    @required Result phoneChanged(_EvPhoneChanged value),
-    @required Result passwordChanged(EvPasswordChanged value),
-    @required Result registerPressed(EvRegisterPressed value),
-  }) {
-    assert(nameChanged != null);
-    assert(emailChanged != null);
-    assert(phoneChanged != null);
-    assert(passwordChanged != null);
-    assert(registerPressed != null);
-    return phoneChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nameChanged(_EvNameChanged value),
-    Result emailChanged(_EvEmailChanged value),
-    Result phoneChanged(_EvPhoneChanged value),
-    Result passwordChanged(EvPasswordChanged value),
-    Result registerPressed(EvRegisterPressed value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (phoneChanged != null) {
-      return phoneChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _EvPhoneChanged implements SignupFormEvent {
-  const factory _EvPhoneChanged(String number) = _$_EvPhoneChanged;
-
-  String get number;
-  _$EvPhoneChangedCopyWith<_EvPhoneChanged> get copyWith;
 }
 
 /// @nodoc
@@ -607,13 +441,11 @@ class _$EvPasswordChanged
   Result when<Result extends Object>({
     @required Result nameChanged(String name),
     @required Result emailChanged(String email),
-    @required Result phoneChanged(String number),
     @required Result passwordChanged(String pwd),
     @required Result registerPressed(UserRole role),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
-    assert(phoneChanged != null);
     assert(passwordChanged != null);
     assert(registerPressed != null);
     return passwordChanged(pwd);
@@ -624,7 +456,6 @@ class _$EvPasswordChanged
   Result maybeWhen<Result extends Object>({
     Result nameChanged(String name),
     Result emailChanged(String email),
-    Result phoneChanged(String number),
     Result passwordChanged(String pwd),
     Result registerPressed(UserRole role),
     @required Result orElse(),
@@ -641,13 +472,11 @@ class _$EvPasswordChanged
   Result map<Result extends Object>({
     @required Result nameChanged(_EvNameChanged value),
     @required Result emailChanged(_EvEmailChanged value),
-    @required Result phoneChanged(_EvPhoneChanged value),
     @required Result passwordChanged(EvPasswordChanged value),
     @required Result registerPressed(EvRegisterPressed value),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
-    assert(phoneChanged != null);
     assert(passwordChanged != null);
     assert(registerPressed != null);
     return passwordChanged(this);
@@ -658,7 +487,6 @@ class _$EvPasswordChanged
   Result maybeMap<Result extends Object>({
     Result nameChanged(_EvNameChanged value),
     Result emailChanged(_EvEmailChanged value),
-    Result phoneChanged(_EvPhoneChanged value),
     Result passwordChanged(EvPasswordChanged value),
     Result registerPressed(EvRegisterPressed value),
     @required Result orElse(),
@@ -762,13 +590,11 @@ class _$EvRegisterPressed
   Result when<Result extends Object>({
     @required Result nameChanged(String name),
     @required Result emailChanged(String email),
-    @required Result phoneChanged(String number),
     @required Result passwordChanged(String pwd),
     @required Result registerPressed(UserRole role),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
-    assert(phoneChanged != null);
     assert(passwordChanged != null);
     assert(registerPressed != null);
     return registerPressed(role);
@@ -779,7 +605,6 @@ class _$EvRegisterPressed
   Result maybeWhen<Result extends Object>({
     Result nameChanged(String name),
     Result emailChanged(String email),
-    Result phoneChanged(String number),
     Result passwordChanged(String pwd),
     Result registerPressed(UserRole role),
     @required Result orElse(),
@@ -796,13 +621,11 @@ class _$EvRegisterPressed
   Result map<Result extends Object>({
     @required Result nameChanged(_EvNameChanged value),
     @required Result emailChanged(_EvEmailChanged value),
-    @required Result phoneChanged(_EvPhoneChanged value),
     @required Result passwordChanged(EvPasswordChanged value),
     @required Result registerPressed(EvRegisterPressed value),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
-    assert(phoneChanged != null);
     assert(passwordChanged != null);
     assert(registerPressed != null);
     return registerPressed(this);
@@ -813,7 +636,6 @@ class _$EvRegisterPressed
   Result maybeMap<Result extends Object>({
     Result nameChanged(_EvNameChanged value),
     Result emailChanged(_EvEmailChanged value),
-    Result phoneChanged(_EvPhoneChanged value),
     Result passwordChanged(EvPasswordChanged value),
     Result registerPressed(EvRegisterPressed value),
     @required Result orElse(),
@@ -844,7 +666,6 @@ class _$SignupFormStateTearOff {
       @required EmailAddress emailAddress,
       @required Password password,
       @required UserRole role,
-      @required bool isApproved,
       @required bool isRegistering,
       @required bool showErrorMessages,
       @required Option<Either<AuthFailure, Unit>> signUpSuccessOrFailure}) {
@@ -854,7 +675,6 @@ class _$SignupFormStateTearOff {
       emailAddress: emailAddress,
       password: password,
       role: role,
-      isApproved: isApproved,
       isRegistering: isRegistering,
       showErrorMessages: showErrorMessages,
       signUpSuccessOrFailure: signUpSuccessOrFailure,
@@ -873,7 +693,6 @@ mixin _$SignupFormState {
   EmailAddress get emailAddress;
   Password get password;
   UserRole get role;
-  bool get isApproved;
   bool get isRegistering;
   bool get showErrorMessages;
   Option<Either<AuthFailure, Unit>> get signUpSuccessOrFailure;
@@ -892,7 +711,6 @@ abstract class $SignupFormStateCopyWith<$Res> {
       EmailAddress emailAddress,
       Password password,
       UserRole role,
-      bool isApproved,
       bool isRegistering,
       bool showErrorMessages,
       Option<Either<AuthFailure, Unit>> signUpSuccessOrFailure});
@@ -916,7 +734,6 @@ class _$SignupFormStateCopyWithImpl<$Res>
     Object emailAddress = freezed,
     Object password = freezed,
     Object role = freezed,
-    Object isApproved = freezed,
     Object isRegistering = freezed,
     Object showErrorMessages = freezed,
     Object signUpSuccessOrFailure = freezed,
@@ -931,8 +748,6 @@ class _$SignupFormStateCopyWithImpl<$Res>
           : emailAddress as EmailAddress,
       password: password == freezed ? _value.password : password as Password,
       role: role == freezed ? _value.role : role as UserRole,
-      isApproved:
-          isApproved == freezed ? _value.isApproved : isApproved as bool,
       isRegistering: isRegistering == freezed
           ? _value.isRegistering
           : isRegistering as bool,
@@ -969,7 +784,6 @@ abstract class _$SignupFormStateCopyWith<$Res>
       EmailAddress emailAddress,
       Password password,
       UserRole role,
-      bool isApproved,
       bool isRegistering,
       bool showErrorMessages,
       Option<Either<AuthFailure, Unit>> signUpSuccessOrFailure});
@@ -996,7 +810,6 @@ class __$SignupFormStateCopyWithImpl<$Res>
     Object emailAddress = freezed,
     Object password = freezed,
     Object role = freezed,
-    Object isApproved = freezed,
     Object isRegistering = freezed,
     Object showErrorMessages = freezed,
     Object signUpSuccessOrFailure = freezed,
@@ -1011,8 +824,6 @@ class __$SignupFormStateCopyWithImpl<$Res>
           : emailAddress as EmailAddress,
       password: password == freezed ? _value.password : password as Password,
       role: role == freezed ? _value.role : role as UserRole,
-      isApproved:
-          isApproved == freezed ? _value.isApproved : isApproved as bool,
       isRegistering: isRegistering == freezed
           ? _value.isRegistering
           : isRegistering as bool,
@@ -1036,7 +847,6 @@ class _$_SignupFormState
       @required this.emailAddress,
       @required this.password,
       @required this.role,
-      @required this.isApproved,
       @required this.isRegistering,
       @required this.showErrorMessages,
       @required this.signUpSuccessOrFailure})
@@ -1044,7 +854,6 @@ class _$_SignupFormState
         assert(emailAddress != null),
         assert(password != null),
         assert(role != null),
-        assert(isApproved != null),
         assert(isRegistering != null),
         assert(showErrorMessages != null),
         assert(signUpSuccessOrFailure != null);
@@ -1060,8 +869,6 @@ class _$_SignupFormState
   @override
   final UserRole role;
   @override
-  final bool isApproved;
-  @override
   final bool isRegistering;
   @override
   final bool showErrorMessages;
@@ -1070,7 +877,7 @@ class _$_SignupFormState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SignupFormState(phoneNumber: $phoneNumber, name: $name, emailAddress: $emailAddress, password: $password, role: $role, isApproved: $isApproved, isRegistering: $isRegistering, showErrorMessages: $showErrorMessages, signUpSuccessOrFailure: $signUpSuccessOrFailure)';
+    return 'SignupFormState(phoneNumber: $phoneNumber, name: $name, emailAddress: $emailAddress, password: $password, role: $role, isRegistering: $isRegistering, showErrorMessages: $showErrorMessages, signUpSuccessOrFailure: $signUpSuccessOrFailure)';
   }
 
   @override
@@ -1083,7 +890,6 @@ class _$_SignupFormState
       ..add(DiagnosticsProperty('emailAddress', emailAddress))
       ..add(DiagnosticsProperty('password', password))
       ..add(DiagnosticsProperty('role', role))
-      ..add(DiagnosticsProperty('isApproved', isApproved))
       ..add(DiagnosticsProperty('isRegistering', isRegistering))
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
       ..add(DiagnosticsProperty(
@@ -1107,9 +913,6 @@ class _$_SignupFormState
                     .equals(other.password, password)) &&
             (identical(other.role, role) ||
                 const DeepCollectionEquality().equals(other.role, role)) &&
-            (identical(other.isApproved, isApproved) ||
-                const DeepCollectionEquality()
-                    .equals(other.isApproved, isApproved)) &&
             (identical(other.isRegistering, isRegistering) ||
                 const DeepCollectionEquality()
                     .equals(other.isRegistering, isRegistering)) &&
@@ -1129,7 +932,6 @@ class _$_SignupFormState
       const DeepCollectionEquality().hash(emailAddress) ^
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(role) ^
-      const DeepCollectionEquality().hash(isApproved) ^
       const DeepCollectionEquality().hash(isRegistering) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(signUpSuccessOrFailure);
@@ -1146,7 +948,6 @@ abstract class _SignupFormState implements SignupFormState {
           @required EmailAddress emailAddress,
           @required Password password,
           @required UserRole role,
-          @required bool isApproved,
           @required bool isRegistering,
           @required bool showErrorMessages,
           @required Option<Either<AuthFailure, Unit>> signUpSuccessOrFailure}) =
@@ -1162,8 +963,6 @@ abstract class _SignupFormState implements SignupFormState {
   Password get password;
   @override
   UserRole get role;
-  @override
-  bool get isApproved;
   @override
   bool get isRegistering;
   @override
