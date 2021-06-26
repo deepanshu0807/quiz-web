@@ -164,7 +164,9 @@ class _StudentQuizPageState extends State<StudentQuizPage> {
                                           context: context,
                                           builder: (BuildContext context) {
                                             return InstructionsDialog(
-                                                quiz: thisq);
+                                              quiz: thisq,
+                                              user: widget.user,
+                                            );
                                           });
                                     },
                                     color: Colors.white,
@@ -191,7 +193,8 @@ class _StudentQuizPageState extends State<StudentQuizPage> {
 
 class InstructionsDialog extends StatelessWidget {
   final Quiz quiz;
-  const InstructionsDialog({Key key, this.quiz}) : super(key: key);
+  final QuizUser user;
+  const InstructionsDialog({Key key, this.quiz, this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -267,6 +270,7 @@ class InstructionsDialog extends StatelessWidget {
                         opaque: false,
                         pageBuilder: (_, __, ___) => QuizScreen(
                               quiz: quiz,
+                              user: user,
                             )),
                   );
                 },

@@ -29,12 +29,21 @@ class SubmissionFormBloc
       initialize: _initialize,
       saveIsClicked: _saveIsClicked,
       quizChanged: _quizChanged,
+      scoreChanged: _scoreChanged,
     );
   }
 
   Stream<SubmissionFormState> _userChanged(_EvUserChanged value) async* {
     yield state.copyWith(
       submission: state.submission.copyWith(user: value.user),
+      isSaving: false,
+      saveFailureOrSuccessOption: none(),
+    );
+  }
+
+  Stream<SubmissionFormState> _scoreChanged(_EvScoreChanged value) async* {
+    yield state.copyWith(
+      submission: state.submission.copyWith(score: value.score),
       isSaving: false,
       saveFailureOrSuccessOption: none(),
     );

@@ -21,6 +21,13 @@ class _$SubmissionFormEventTearOff {
   }
 
 // ignore: unused_element
+  _EvScoreChanged scoreChanged(int score) {
+    return _EvScoreChanged(
+      score,
+    );
+  }
+
+// ignore: unused_element
   _EvQuizChanged quizChanged(Quiz quiz) {
     return _EvQuizChanged(
       quiz,
@@ -47,6 +54,7 @@ mixin _$SubmissionFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result userChanged(QuizUser user),
+    @required Result scoreChanged(int score),
     @required Result quizChanged(Quiz quiz),
     @required Result initialize(),
     @required Result saveIsClicked(),
@@ -54,6 +62,7 @@ mixin _$SubmissionFormEvent {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result userChanged(QuizUser user),
+    Result scoreChanged(int score),
     Result quizChanged(Quiz quiz),
     Result initialize(),
     Result saveIsClicked(),
@@ -62,6 +71,7 @@ mixin _$SubmissionFormEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result userChanged(_EvUserChanged value),
+    @required Result scoreChanged(_EvScoreChanged value),
     @required Result quizChanged(_EvQuizChanged value),
     @required Result initialize(_EvInitialize value),
     @required Result saveIsClicked(_EvSaveIsClicked value),
@@ -69,6 +79,7 @@ mixin _$SubmissionFormEvent {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result userChanged(_EvUserChanged value),
+    Result scoreChanged(_EvScoreChanged value),
     Result quizChanged(_EvQuizChanged value),
     Result initialize(_EvInitialize value),
     Result saveIsClicked(_EvSaveIsClicked value),
@@ -166,11 +177,13 @@ class _$_EvUserChanged implements _EvUserChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result userChanged(QuizUser user),
+    @required Result scoreChanged(int score),
     @required Result quizChanged(Quiz quiz),
     @required Result initialize(),
     @required Result saveIsClicked(),
   }) {
     assert(userChanged != null);
+    assert(scoreChanged != null);
     assert(quizChanged != null);
     assert(initialize != null);
     assert(saveIsClicked != null);
@@ -181,6 +194,7 @@ class _$_EvUserChanged implements _EvUserChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result userChanged(QuizUser user),
+    Result scoreChanged(int score),
     Result quizChanged(Quiz quiz),
     Result initialize(),
     Result saveIsClicked(),
@@ -197,11 +211,13 @@ class _$_EvUserChanged implements _EvUserChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result userChanged(_EvUserChanged value),
+    @required Result scoreChanged(_EvScoreChanged value),
     @required Result quizChanged(_EvQuizChanged value),
     @required Result initialize(_EvInitialize value),
     @required Result saveIsClicked(_EvSaveIsClicked value),
   }) {
     assert(userChanged != null);
+    assert(scoreChanged != null);
     assert(quizChanged != null);
     assert(initialize != null);
     assert(saveIsClicked != null);
@@ -212,6 +228,7 @@ class _$_EvUserChanged implements _EvUserChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result userChanged(_EvUserChanged value),
+    Result scoreChanged(_EvScoreChanged value),
     Result quizChanged(_EvQuizChanged value),
     Result initialize(_EvInitialize value),
     Result saveIsClicked(_EvSaveIsClicked value),
@@ -230,6 +247,139 @@ abstract class _EvUserChanged implements SubmissionFormEvent {
 
   QuizUser get user;
   _$EvUserChangedCopyWith<_EvUserChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$EvScoreChangedCopyWith<$Res> {
+  factory _$EvScoreChangedCopyWith(
+          _EvScoreChanged value, $Res Function(_EvScoreChanged) then) =
+      __$EvScoreChangedCopyWithImpl<$Res>;
+  $Res call({int score});
+}
+
+/// @nodoc
+class __$EvScoreChangedCopyWithImpl<$Res>
+    extends _$SubmissionFormEventCopyWithImpl<$Res>
+    implements _$EvScoreChangedCopyWith<$Res> {
+  __$EvScoreChangedCopyWithImpl(
+      _EvScoreChanged _value, $Res Function(_EvScoreChanged) _then)
+      : super(_value, (v) => _then(v as _EvScoreChanged));
+
+  @override
+  _EvScoreChanged get _value => super._value as _EvScoreChanged;
+
+  @override
+  $Res call({
+    Object score = freezed,
+  }) {
+    return _then(_EvScoreChanged(
+      score == freezed ? _value.score : score as int,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_EvScoreChanged implements _EvScoreChanged {
+  const _$_EvScoreChanged(this.score) : assert(score != null);
+
+  @override
+  final int score;
+
+  @override
+  String toString() {
+    return 'SubmissionFormEvent.scoreChanged(score: $score)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _EvScoreChanged &&
+            (identical(other.score, score) ||
+                const DeepCollectionEquality().equals(other.score, score)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(score);
+
+  @override
+  _$EvScoreChangedCopyWith<_EvScoreChanged> get copyWith =>
+      __$EvScoreChangedCopyWithImpl<_EvScoreChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result userChanged(QuizUser user),
+    @required Result scoreChanged(int score),
+    @required Result quizChanged(Quiz quiz),
+    @required Result initialize(),
+    @required Result saveIsClicked(),
+  }) {
+    assert(userChanged != null);
+    assert(scoreChanged != null);
+    assert(quizChanged != null);
+    assert(initialize != null);
+    assert(saveIsClicked != null);
+    return scoreChanged(score);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result userChanged(QuizUser user),
+    Result scoreChanged(int score),
+    Result quizChanged(Quiz quiz),
+    Result initialize(),
+    Result saveIsClicked(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (scoreChanged != null) {
+      return scoreChanged(score);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result userChanged(_EvUserChanged value),
+    @required Result scoreChanged(_EvScoreChanged value),
+    @required Result quizChanged(_EvQuizChanged value),
+    @required Result initialize(_EvInitialize value),
+    @required Result saveIsClicked(_EvSaveIsClicked value),
+  }) {
+    assert(userChanged != null);
+    assert(scoreChanged != null);
+    assert(quizChanged != null);
+    assert(initialize != null);
+    assert(saveIsClicked != null);
+    return scoreChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result userChanged(_EvUserChanged value),
+    Result scoreChanged(_EvScoreChanged value),
+    Result quizChanged(_EvQuizChanged value),
+    Result initialize(_EvInitialize value),
+    Result saveIsClicked(_EvSaveIsClicked value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (scoreChanged != null) {
+      return scoreChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EvScoreChanged implements SubmissionFormEvent {
+  const factory _EvScoreChanged(int score) = _$_EvScoreChanged;
+
+  int get score;
+  _$EvScoreChangedCopyWith<_EvScoreChanged> get copyWith;
 }
 
 /// @nodoc
@@ -305,11 +455,13 @@ class _$_EvQuizChanged implements _EvQuizChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result userChanged(QuizUser user),
+    @required Result scoreChanged(int score),
     @required Result quizChanged(Quiz quiz),
     @required Result initialize(),
     @required Result saveIsClicked(),
   }) {
     assert(userChanged != null);
+    assert(scoreChanged != null);
     assert(quizChanged != null);
     assert(initialize != null);
     assert(saveIsClicked != null);
@@ -320,6 +472,7 @@ class _$_EvQuizChanged implements _EvQuizChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result userChanged(QuizUser user),
+    Result scoreChanged(int score),
     Result quizChanged(Quiz quiz),
     Result initialize(),
     Result saveIsClicked(),
@@ -336,11 +489,13 @@ class _$_EvQuizChanged implements _EvQuizChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result userChanged(_EvUserChanged value),
+    @required Result scoreChanged(_EvScoreChanged value),
     @required Result quizChanged(_EvQuizChanged value),
     @required Result initialize(_EvInitialize value),
     @required Result saveIsClicked(_EvSaveIsClicked value),
   }) {
     assert(userChanged != null);
+    assert(scoreChanged != null);
     assert(quizChanged != null);
     assert(initialize != null);
     assert(saveIsClicked != null);
@@ -351,6 +506,7 @@ class _$_EvQuizChanged implements _EvQuizChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result userChanged(_EvUserChanged value),
+    Result scoreChanged(_EvScoreChanged value),
     Result quizChanged(_EvQuizChanged value),
     Result initialize(_EvInitialize value),
     Result saveIsClicked(_EvSaveIsClicked value),
@@ -411,11 +567,13 @@ class _$_EvInitialize implements _EvInitialize {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result userChanged(QuizUser user),
+    @required Result scoreChanged(int score),
     @required Result quizChanged(Quiz quiz),
     @required Result initialize(),
     @required Result saveIsClicked(),
   }) {
     assert(userChanged != null);
+    assert(scoreChanged != null);
     assert(quizChanged != null);
     assert(initialize != null);
     assert(saveIsClicked != null);
@@ -426,6 +584,7 @@ class _$_EvInitialize implements _EvInitialize {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result userChanged(QuizUser user),
+    Result scoreChanged(int score),
     Result quizChanged(Quiz quiz),
     Result initialize(),
     Result saveIsClicked(),
@@ -442,11 +601,13 @@ class _$_EvInitialize implements _EvInitialize {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result userChanged(_EvUserChanged value),
+    @required Result scoreChanged(_EvScoreChanged value),
     @required Result quizChanged(_EvQuizChanged value),
     @required Result initialize(_EvInitialize value),
     @required Result saveIsClicked(_EvSaveIsClicked value),
   }) {
     assert(userChanged != null);
+    assert(scoreChanged != null);
     assert(quizChanged != null);
     assert(initialize != null);
     assert(saveIsClicked != null);
@@ -457,6 +618,7 @@ class _$_EvInitialize implements _EvInitialize {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result userChanged(_EvUserChanged value),
+    Result scoreChanged(_EvScoreChanged value),
     Result quizChanged(_EvQuizChanged value),
     Result initialize(_EvInitialize value),
     Result saveIsClicked(_EvSaveIsClicked value),
@@ -514,11 +676,13 @@ class _$_EvSaveIsClicked implements _EvSaveIsClicked {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result userChanged(QuizUser user),
+    @required Result scoreChanged(int score),
     @required Result quizChanged(Quiz quiz),
     @required Result initialize(),
     @required Result saveIsClicked(),
   }) {
     assert(userChanged != null);
+    assert(scoreChanged != null);
     assert(quizChanged != null);
     assert(initialize != null);
     assert(saveIsClicked != null);
@@ -529,6 +693,7 @@ class _$_EvSaveIsClicked implements _EvSaveIsClicked {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result userChanged(QuizUser user),
+    Result scoreChanged(int score),
     Result quizChanged(Quiz quiz),
     Result initialize(),
     Result saveIsClicked(),
@@ -545,11 +710,13 @@ class _$_EvSaveIsClicked implements _EvSaveIsClicked {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result userChanged(_EvUserChanged value),
+    @required Result scoreChanged(_EvScoreChanged value),
     @required Result quizChanged(_EvQuizChanged value),
     @required Result initialize(_EvInitialize value),
     @required Result saveIsClicked(_EvSaveIsClicked value),
   }) {
     assert(userChanged != null);
+    assert(scoreChanged != null);
     assert(quizChanged != null);
     assert(initialize != null);
     assert(saveIsClicked != null);
@@ -560,6 +727,7 @@ class _$_EvSaveIsClicked implements _EvSaveIsClicked {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result userChanged(_EvUserChanged value),
+    Result scoreChanged(_EvScoreChanged value),
     Result quizChanged(_EvQuizChanged value),
     Result initialize(_EvInitialize value),
     Result saveIsClicked(_EvSaveIsClicked value),
