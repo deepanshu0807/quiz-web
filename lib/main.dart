@@ -9,6 +9,7 @@ import 'application/auth/sign_up_form_bloc/signup_form_bloc.dart';
 import 'application/auth/signinform/signinform_bloc.dart';
 import 'application/course_watcher_bloc/course_watcher_bloc.dart';
 import 'application/landing_page_bloc/landingpage_bloc.dart';
+import 'application/quiz_watcher_bloc.dart/quiz_watcher_bloc.dart';
 import 'application/user_details_form_bloc/user_details_form_bloc.dart';
 import 'application/user_details_watcher/user_details_watcher_bloc.dart';
 import 'config/di/injection.dart';
@@ -45,6 +46,12 @@ class MyApp extends StatelessWidget {
               create: (_) => getIt<CourseWatcherBloc>()
                 ..add(
                   const CourseWatcherEvent.getAllCourses(),
+                ),
+            ),
+            BlocProvider(
+              create: (_) => getIt<QuizWatcherBloc>()
+                ..add(
+                  const QuizWatcherEvent.getAllQuizes(),
                 ),
             ),
             BlocProvider(create: (_) => getIt<UserDetailsWatcherBloc>()),

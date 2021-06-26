@@ -120,9 +120,13 @@ class AddQuizFormBloc extends Bloc<AddQuizFormEvent, AddQuizFormState> {
   }
 
   Stream<AddQuizFormState> _saveIsClicked(_EvSaveIsClicked value) async* {
+    yield state.copyWith(
+      isLoading: true,
+    );
     final result = await _iQuizRepo.createQuiz(state.quiz);
 
     yield state.copyWith(
+      isLoading: false,
       saveFailureOrSuccessOption: some(result),
     );
 

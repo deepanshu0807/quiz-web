@@ -5,6 +5,7 @@ import 'package:quiz_shared/domain/quiz/course.dart';
 import 'package:quiz_shared/domain/quiz/question.dart';
 import 'package:quiz_shared/presentation/error_display_helper.dart';
 import 'package:quiz_web/presentation/utils/utility.dart';
+import 'package:quiz_web/presentation/widgets/loading.dart';
 import 'package:quiz_web/presentation/widgets/text_field_basic.dart';
 import 'package:quiz_shared/quiz_shared.dart';
 import 'package:quiz_web/application/add_quiz_form_bloc/add_quiz_form_bloc.dart';
@@ -22,155 +23,278 @@ class _AddQuizState extends State<AddQuiz> {
   TextEditingController ppoints = TextEditingController();
   TextEditingController topic = TextEditingController();
 
+  updateCourseBoolean() async {
+    final cRef = FirebaseFirestore.instance.collection('COURSE');
+    await cRef
+        .doc(widget.course.id.getOrElse(""))
+        .set({"hasQuiz": true}, SetOptions(merge: true));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: ClipRect(
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
-          child: Container(
-            margin: kPadding20,
-            padding: kPadding20,
-            color: Colors.white,
-            height: screenHeight(context),
-            width: screenWidth(context),
-            child: Stack(
-              children: [
-                ListView(
+      body: BlocConsumer<AddQuizFormBloc, AddQuizFormState>(
+        listener: (context, state) {
+          state.saveFailureOrSuccessOption.fold(
+            () {},
+            (a) {
+              Navigator.of(context).pop();
+            },
+          );
+        },
+        builder: (context, state) {
+          return ClipRect(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
+              child: Container(
+                margin: kPadding20,
+                padding: kPadding20,
+                color: Colors.white,
+                height: screenHeight(context),
+                width: screenWidth(context),
+                child: Stack(
                   children: [
-                    Text(
-                      "Add Quiz",
-                      style: text40,
-                    ),
-                    verticalSpaceLarge,
-                    Text(
-                      "This will be saved under ${widget.course.name} course.",
-                      style: text22.copyWith(color: Colors.grey),
-                    ),
-                    verticalSpaceLarge,
-                    Column(
-                      crossAxisAlignment: crossS,
+                    ListView(
                       children: [
-                        Text(
-                          "Topic name",
-                          style: text22,
-                        ),
-                        verticalSpaceSmall,
-                        SizedBox(
-                          width: 500.w,
-                          child: TextInputBasicField(
-                            controller: topic,
-                            label: "Enter topic for quiz",
-                            onChanged: (val) {
-                              context
-                                  .read<AddQuizFormBloc>()
-                                  .add(AddQuizFormEvent.topicChanged(val));
-                              context.read<AddQuizFormBloc>().add(
-                                  AddQuizFormEvent.courseChanged(
-                                      widget.course));
-                            },
-                          ),
-                        )
-                      ],
-                    ),
-                    verticalSpaceMedium30,
-                    Row(
-                      children: [
-                        Column(
+                        Row(
                           crossAxisAlignment: crossS,
+                          mainAxisAlignment: mainSB,
                           children: [
-                            Text(
-                              "Maximum Points",
-                              style: text22,
+                            Column(
+                              crossAxisAlignment: crossS,
+                              children: [
+                                Text(
+                                  "Add Quiz",
+                                  style: text40,
+                                ),
+                                verticalSpaceLarge,
+                                Text(
+                                  "This will be saved under ${widget.course.name} course.",
+                                  style: text22.copyWith(color: Colors.grey),
+                                ),
+                                verticalSpaceLarge,
+                                Column(
+                                  crossAxisAlignment: crossS,
+                                  children: [
+                                    Text(
+                                      "Topic name",
+                                      style: text22,
+                                    ),
+                                    verticalSpaceSmall,
+                                    SizedBox(
+                                      width: 500.w,
+                                      child: TextInputBasicField(
+                                        controller: topic,
+                                        label: "Enter topic for quiz",
+                                        onChanged: (val) {
+                                          context.read<AddQuizFormBloc>().add(
+                                              AddQuizFormEvent.topicChanged(
+                                                  val));
+                                          context.read<AddQuizFormBloc>().add(
+                                              AddQuizFormEvent.courseChanged(
+                                                  widget.course));
+                                        },
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                verticalSpaceMedium30,
+                                Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment: crossS,
+                                      children: [
+                                        Text(
+                                          "Maximum Points",
+                                          style: text22,
+                                        ),
+                                        verticalSpaceSmall,
+                                        SizedBox(
+                                          width: 230.w,
+                                          child: TextInputBasicField(
+                                            controller: tpoints,
+                                            label: "Total points",
+                                            onChanged: (val) {
+                                              context
+                                                  .read<AddQuizFormBloc>()
+                                                  .add(AddQuizFormEvent
+                                                      .totalPointsChanged(
+                                                          int.parse(val)));
+                                            },
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    horizontalSpaceMedium40,
+                                    Column(
+                                      crossAxisAlignment: crossS,
+                                      children: [
+                                        Text(
+                                          "Passing Points",
+                                          style: text22,
+                                        ),
+                                        verticalSpaceSmall,
+                                        SizedBox(
+                                          width: 230.w,
+                                          child: TextInputBasicField(
+                                            controller: ppoints,
+                                            label: "Points to pass",
+                                            onChanged: (val) {
+                                              context
+                                                  .read<AddQuizFormBloc>()
+                                                  .add(AddQuizFormEvent
+                                                      .passPointsChanged(
+                                                          int.parse(val)));
+                                            },
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                verticalSpaceLarge,
+                                Text(
+                                  "Add Questions",
+                                  style: text30,
+                                ),
+                                verticalSpaceMedium20,
+                                AddQuestionsToQuizWidget(),
+                              ],
                             ),
-                            verticalSpaceSmall,
-                            SizedBox(
-                              width: 230.w,
-                              child: TextInputBasicField(
-                                controller: tpoints,
-                                label: "Total points",
-                                onChanged: (val) {
-                                  context.read<AddQuizFormBloc>().add(
-                                      AddQuizFormEvent.totalPointsChanged(
-                                          int.parse(val)));
-                                },
-                              ),
-                            )
+                            QuestionsDisplayWidget(),
                           ],
                         ),
-                        horizontalSpaceMedium40,
-                        Column(
-                          crossAxisAlignment: crossS,
-                          children: [
-                            Text(
-                              "Passing Points",
-                              style: text22,
-                            ),
-                            verticalSpaceSmall,
-                            SizedBox(
-                              width: 230.w,
-                              child: TextInputBasicField(
-                                controller: ppoints,
-                                label: "Points to pass",
-                                onChanged: (val) {
-                                  context.read<AddQuizFormBloc>().add(
-                                      AddQuizFormEvent.passPointsChanged(
-                                          int.parse(val)));
-                                },
-                              ),
-                            )
-                          ],
-                        ),
                       ],
                     ),
-                    verticalSpaceLarge,
-                    Text(
-                      "Add Questions",
-                      style: text30,
-                    ),
-                    verticalSpaceMedium20,
-                    AddQuestionsToQuizWidget(),
+                    Positioned(
+                      bottom: 30.h,
+                      right: 50.w,
+                      child: SizedBox(
+                        width: 300.w,
+                        child: state.isLoading
+                            ? Loading(
+                                size: 50.sp,
+                              )
+                            : FlatButton(
+                                height: 60,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: kBorderR10),
+                                color: Colors.black,
+                                onPressed: () {
+                                  context
+                                      .read<AddQuizFormBloc>()
+                                      .add(AddQuizFormEvent.saveIsClicked());
+                                  updateCourseBoolean();
+                                },
+                                child: Row(
+                                  mainAxisAlignment: mainC,
+                                  children: [
+                                    Icon(
+                                      Icons.add,
+                                      color: Colors.white,
+                                      size: 30.sp,
+                                    ),
+                                    horizontalSpaceMedium20,
+                                    Text(
+                                      "ADD QUIZ",
+                                      style:
+                                          text30.copyWith(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                      ),
+                    )
                   ],
                 ),
-                Positioned(
-                  bottom: 30.h,
-                  right: 50.w,
-                  child: SizedBox(
-                    width: 300.w,
-                    child: FlatButton(
-                      height: 60,
-                      shape: RoundedRectangleBorder(borderRadius: kBorderR10),
-                      color: Colors.black,
-                      onPressed: () {
-                        context
-                            .read<AddQuizFormBloc>()
-                            .add(AddQuizFormEvent.saveIsClicked());
-                      },
-                      child: Row(
-                        mainAxisAlignment: mainC,
-                        children: [
-                          Icon(
-                            Icons.add,
-                            color: Colors.white,
-                            size: 30.sp,
-                          ),
-                          horizontalSpaceMedium20,
-                          Text(
-                            "ADD QUIZ",
-                            style: text30.copyWith(color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                )
-              ],
+              ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
+  }
+}
+
+class QuestionsDisplayWidget extends StatefulWidget {
+  const QuestionsDisplayWidget({Key key}) : super(key: key);
+
+  @override
+  _QuestionsDisplayWidgetState createState() => _QuestionsDisplayWidgetState();
+}
+
+class _QuestionsDisplayWidgetState extends State<QuestionsDisplayWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Builder(builder: (context) {
+      final questions =
+          context.select((AddQuizFormBloc value) => value.state.quiz.questions);
+      if (questions.isEmpty) {
+        return Column(
+          children: [
+            Text(
+              "No Questions added yet",
+              style: text22,
+            ),
+          ],
+        );
+      } else {
+        return SizedBox(
+          height: screenHeight(context) / 1.1,
+          width: screenWidth(context) / 2.2,
+          child: ListView.builder(
+            itemCount: questions.length,
+            itemBuilder: (context, index) {
+              final thisq = questions[index];
+              return Container(
+                margin: kPadding20,
+                padding: kPadding10,
+                decoration: BoxDecoration(
+                  gradient: gradientDecoration,
+                  borderRadius: kBorderR15,
+                ),
+                child: Column(
+                  crossAxisAlignment: crossS,
+                  children: [
+                    Text(
+                      "${index + 1}) ${thisq.question}",
+                      style: text30.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    verticalSpaceMedium15,
+                    Text(
+                      "A) ${thisq.optionA}",
+                      style: text22.copyWith(fontSize: 25.sp),
+                    ),
+                    verticalSpaceSmall,
+                    Text(
+                      "B) ${thisq.optionB}",
+                      style: text22.copyWith(fontSize: 25.sp),
+                    ),
+                    verticalSpaceSmall,
+                    Text(
+                      "C) ${thisq.optionC}",
+                      style: text22.copyWith(fontSize: 25.sp),
+                    ),
+                    verticalSpaceSmall,
+                    Text(
+                      "D) ${thisq.optionD}",
+                      style: text22.copyWith(fontSize: 25.sp),
+                    ),
+                    verticalSpaceMedium15,
+                    Text(
+                      "Answer) ${thisq.answer}",
+                      style: text22.copyWith(
+                          fontSize: 26.sp, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        );
+      }
+    });
   }
 }
 
