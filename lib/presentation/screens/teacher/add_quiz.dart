@@ -22,6 +22,7 @@ class _AddQuizState extends State<AddQuiz> {
   TextEditingController tpoints = TextEditingController();
   TextEditingController ppoints = TextEditingController();
   TextEditingController topic = TextEditingController();
+  TextEditingController timec = TextEditingController();
 
   updateCourseBoolean() async {
     final cRef = FirebaseFirestore.instance.collection('COURSE');
@@ -153,6 +154,41 @@ class _AddQuizState extends State<AddQuiz> {
                                     ),
                                   ],
                                 ),
+                                verticalSpaceMedium30,
+                                Column(
+                                  crossAxisAlignment: crossS,
+                                  children: [
+                                    Text(
+                                      "Time Limit : ",
+                                      style: text22,
+                                    ),
+                                    verticalSpaceSmall,
+                                    Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 230.w,
+                                          child: TextInputBasicField(
+                                            controller: timec,
+                                            label: "Time eg. 10",
+                                            onChanged: (val) {
+                                              context
+                                                  .read<AddQuizFormBloc>()
+                                                  .add(AddQuizFormEvent
+                                                      .minutesChanged(
+                                                          int.parse(val)));
+                                            },
+                                          ),
+                                        ),
+                                        horizontalSpaceMedium20,
+                                        Text(
+                                          "minutes",
+                                          style: text22.copyWith(
+                                              color: Colors.grey[600]),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                                 verticalSpaceLarge,
                                 Text(
                                   "Add Questions",
@@ -160,6 +196,11 @@ class _AddQuizState extends State<AddQuiz> {
                                 ),
                                 verticalSpaceMedium20,
                                 AddQuestionsToQuizWidget(),
+                                verticalSpaceMedium20,
+                                Text(
+                                  "Your per question points total should be equal to 'Total Points'",
+                                  style: text22.copyWith(color: Colors.grey),
+                                ),
                               ],
                             ),
                             QuestionsDisplayWidget(),
@@ -205,6 +246,27 @@ class _AddQuizState extends State<AddQuiz> {
                                 ),
                               ),
                       ),
+                    ),
+                    Positioned(
+                      top: 0,
+                      right: 0,
+                      child: Container(
+                        height: 60,
+                        width: 60,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle, color: Colors.black87),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Icon(
+                            Icons.close,
+                            color: Colors.white,
+                            size: 30.sp,
+                          ),
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -232,7 +294,10 @@ class _QuestionsDisplayWidgetState extends State<QuestionsDisplayWidget> {
           context.select((AddQuizFormBloc value) => value.state.quiz.questions);
       if (questions.isEmpty) {
         return Column(
+          crossAxisAlignment: crossS,
           children: [
+            verticalSpaceMassive,
+            verticalSpaceMassive,
             Text(
               "No Questions added yet",
               style: text22,
@@ -241,7 +306,7 @@ class _QuestionsDisplayWidgetState extends State<QuestionsDisplayWidget> {
         );
       } else {
         return SizedBox(
-          height: screenHeight(context) / 1.1,
+          height: screenHeight(context) / 0.7,
           width: screenWidth(context) / 2.2,
           child: ListView.builder(
             itemCount: questions.length,
@@ -557,6 +622,8 @@ class _AddQuestionsToQuizWidgetState extends State<AddQuestionsToQuizWidget> {
                           context.read<AddQuizFormBloc>().add(
                               AddQuizFormEvent.addThisQuestion(
                                   currentQuestion));
+                          DisplayMessage.showSuccessMessage(
+                              context, "Question added successfully");
                           initializeCurrentQuestion();
                           resetControllers();
                         } else {

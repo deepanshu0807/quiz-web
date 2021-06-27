@@ -52,7 +52,7 @@ class StudentNavbar extends StatelessWidget {
                               .add(const LandingpageEvent.dashboardSelected());
                         },
                       ),
-                      verticalSpaceLarge,
+                      verticalSpaceMedium25,
                       NavTiles(
                         iconAssetName: Icons.menu_book_sharp,
                         text: "Quizes",
@@ -64,7 +64,7 @@ class StudentNavbar extends StatelessWidget {
                               .add(const LandingpageEvent.quizSelected());
                         },
                       ),
-                      verticalSpaceLarge,
+                      verticalSpaceMedium25,
                       NavTiles(
                         iconAssetName: Icons.leaderboard_rounded,
                         text: "Leaderboards",
@@ -73,6 +73,18 @@ class StudentNavbar extends StatelessWidget {
                         onSelected: () {
                           context.read<LandingpageBloc>().add(
                               const LandingpageEvent.leaderboardsSelected());
+                        },
+                      ),
+                      verticalSpaceMedium25,
+                      NavTiles(
+                        iconAssetName: Icons.history,
+                        text: "History",
+                        isSelected: landingpagestate.maybeMap(
+                            orElse: () => false, history: (_) => true),
+                        onSelected: () {
+                          context
+                              .read<LandingpageBloc>()
+                              .add(const LandingpageEvent.historySelected());
                         },
                       ),
                     ],

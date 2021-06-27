@@ -23,15 +23,15 @@ class AddQuizFormBloc extends Bloc<AddQuizFormEvent, AddQuizFormState> {
     AddQuizFormEvent event,
   ) async* {
     yield* event.map(
-      topicChanged: _topicChanged,
-      courseChanged: _courseChanged,
-      totalPointsChanged: _totalPointsChanged,
-      passPointsChanged: _passPointsChanged,
-      addThisQuestion: _addThisQuestion,
-      initialize: _initialize,
-      saveIsClicked: _saveIsClicked,
-      deleteIsClicked: _deleteIsClicked,
-    );
+        topicChanged: _topicChanged,
+        courseChanged: _courseChanged,
+        totalPointsChanged: _totalPointsChanged,
+        passPointsChanged: _passPointsChanged,
+        addThisQuestion: _addThisQuestion,
+        initialize: _initialize,
+        saveIsClicked: _saveIsClicked,
+        deleteIsClicked: _deleteIsClicked,
+        minutesChanged: _minutesChanged);
   }
 
   Stream<AddQuizFormState> _addThisQuestion(_EvAddThisQues value) async* {
@@ -62,6 +62,17 @@ class AddQuizFormBloc extends Bloc<AddQuizFormEvent, AddQuizFormState> {
             ],
           ));
     }
+  }
+
+  Stream<AddQuizFormState> _minutesChanged(_EvMinutesChanged value) async* {
+    yield state.copyWith(
+      quiz: state.quiz.copyWith(
+        minutes: value.minutes,
+      ),
+      showErrorMessage: false,
+      isLoading: false,
+      saveFailureOrSuccessOption: none(),
+    );
   }
 
   Stream<AddQuizFormState> _courseChanged(_EvCourseChanged value) async* {

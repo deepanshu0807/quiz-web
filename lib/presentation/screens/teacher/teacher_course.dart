@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_shared/domain/quiz/course.dart';
 import 'package:quiz_shared/domain/user/user.dart';
 import 'package:quiz_shared/quiz_shared.dart';
 import 'package:quiz_web/application/add_course_form_bloc/add_course_form_bloc.dart';
 import 'package:quiz_web/application/course_watcher_bloc/course_watcher_bloc.dart';
+import 'package:quiz_web/application/quiz_watcher_bloc.dart/quiz_watcher_bloc.dart';
 import 'package:quiz_web/presentation/screens/teacher/add_quiz.dart';
 import 'package:quiz_web/presentation/utils/utility.dart';
 import 'package:quiz_web/presentation/widgets/loading.dart';
@@ -157,9 +159,18 @@ class _TeacherCourseState extends State<TeacherCourse> {
                                       mainAxisAlignment: mainSB,
                                       children: [
                                         FlatButton(
+                                          minWidth: 0,
                                           shape: kRoundedShape,
                                           onPressed: () {
                                             if (thisc.hasQuiz) {
+                                              showDialog(
+                                                  context: context,
+                                                  builder:
+                                                      (BuildContext context) {
+                                                    return QuizDisplayDialog(
+                                                      course: thisc,
+                                                    );
+                                                  });
                                             } else {
                                               Navigator.of(context).push(
                                                 PageRouteBuilder(
@@ -171,12 +182,24 @@ class _TeacherCourseState extends State<TeacherCourse> {
                                               );
                                             }
                                           },
-                                          color: Colors.white60,
-                                          child: Text(
-                                            thisc.hasQuiz
-                                                ? "View Quiz"
-                                                : "Add Quiz",
-                                            style: text20,
+                                          color: Colors.white,
+                                          child: Row(
+                                            children: [
+                                              Icon(
+                                                thisc.hasQuiz
+                                                    ? Icons.visibility_rounded
+                                                    : Icons.add,
+                                                color: Colors.black,
+                                                size: 20.sp,
+                                              ),
+                                              horizontalSpaceSmall,
+                                              Text(
+                                                thisc.hasQuiz
+                                                    ? "View Quiz"
+                                                    : "Add Quiz",
+                                                style: text22,
+                                              ),
+                                            ],
                                           ),
                                         ),
                                         FlatButton(
@@ -209,6 +232,130 @@ class _TeacherCourseState extends State<TeacherCourse> {
         ],
       );
     });
+  }
+}
+
+class QuizDisplayDialog extends StatelessWidget {
+  final Course course;
+  const QuizDisplayDialog({Key key, this.course}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      shape: kRoundedShape,
+      backgroundColor: primaryColor.withOpacity(0.6),
+      child: Container(
+        width: screenWidth(context) / 1.5,
+        height: screenHeight(context),
+        decoration: BoxDecoration(
+          borderRadius: kBorderR20,
+          color: Colors.white,
+        ),
+        padding: kPadding20,
+        margin: kPadding10,
+        child: BlocBuilder<QuizWatcherBloc, QuizWatcherState>(
+          builder: (context, state) {
+            return state.map(
+              initial: (_) => Loading(),
+              loadInProgress: (_) => Loading(),
+              loadFailure: (_) => Loading(),
+              loadSuccess: (q) {
+                final thisquiz = q.quiz
+                    .where((element) => element.course.id == course.id)
+                    .first;
+                return Column(
+                  crossAxisAlignment: crossS,
+                  children: [
+                    Row(
+                      mainAxisAlignment: mainSB,
+                      children: [
+                        Text(
+                          thisquiz.topic,
+                          style: text40,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Icon(
+                            Icons.close,
+                            color: Colors.black,
+                            size: 35.sp,
+                          ),
+                        ),
+                      ],
+                    ),
+                    verticalSpaceMedium30,
+                    Text(
+                      "Points: ${thisquiz.totalPoints}, Time: ${thisquiz.minutes}mins, Pass on: ${thisquiz.passPoints}",
+                      style: text30,
+                    ),
+                    verticalSpaceMedium15,
+                    Divider(
+                      color: secondaryColor,
+                    ),
+                    verticalSpaceMedium15,
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: thisquiz.questions.length,
+                        itemBuilder: (context, index) {
+                          final thisq = thisquiz.questions[index];
+                          return Container(
+                            margin: kPadding20,
+                            padding: kPadding10,
+                            decoration: BoxDecoration(
+                              gradient: gradientDecoration,
+                              borderRadius: kBorderR15,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: crossS,
+                              children: [
+                                Text(
+                                  "${index + 1}) ${thisq.question}",
+                                  style: text30.copyWith(
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                verticalSpaceMedium15,
+                                Text(
+                                  "A) ${thisq.optionA}",
+                                  style: text22.copyWith(fontSize: 25.sp),
+                                ),
+                                verticalSpaceSmall,
+                                Text(
+                                  "B) ${thisq.optionB}",
+                                  style: text22.copyWith(fontSize: 25.sp),
+                                ),
+                                verticalSpaceSmall,
+                                Text(
+                                  "C) ${thisq.optionC}",
+                                  style: text22.copyWith(fontSize: 25.sp),
+                                ),
+                                verticalSpaceSmall,
+                                Text(
+                                  "D) ${thisq.optionD}",
+                                  style: text22.copyWith(fontSize: 25.sp),
+                                ),
+                                verticalSpaceMedium15,
+                                Text(
+                                  "Answer) ${thisq.answer}",
+                                  style: text22.copyWith(
+                                      fontSize: 26.sp,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    )
+                  ],
+                );
+              },
+            );
+          },
+        ),
+      ),
+    );
   }
 }
 

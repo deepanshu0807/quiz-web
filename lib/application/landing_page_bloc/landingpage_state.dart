@@ -5,5 +5,6 @@ abstract class LandingpageState with _$LandingpageState {
   const factory LandingpageState.dashboard() = _StDashBoard;
   const factory LandingpageState.course() = _StCourse;
   const factory LandingpageState.quiz() = _StQuiz;
+  const factory LandingpageState.history() = _StHistory;
   const factory LandingpageState.leaderboards() = _StLeaderboards;
 }

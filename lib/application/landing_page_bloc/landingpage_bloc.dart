@@ -31,6 +31,9 @@ class LandingpageBloc extends Bloc<LandingpageEvent, LandingpageState> {
       leaderboardsSelected: (e) async* {
         yield const LandingpageState.leaderboards();
       },
+      historySelected: (e) async* {
+        yield const LandingpageState.history();
+      },
     );
   }
 }

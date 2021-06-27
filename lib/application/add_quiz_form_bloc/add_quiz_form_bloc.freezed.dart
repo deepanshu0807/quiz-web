@@ -35,6 +35,13 @@ class _$AddQuizFormEventTearOff {
   }
 
 // ignore: unused_element
+  _EvMinutesChanged minutesChanged(int minutes) {
+    return _EvMinutesChanged(
+      minutes,
+    );
+  }
+
+// ignore: unused_element
   _EvPassPointsChanged passPointsChanged(int passPoints) {
     return _EvPassPointsChanged(
       passPoints,
@@ -77,6 +84,7 @@ mixin _$AddQuizFormEvent {
     @required Result topicChanged(String topic),
     @required Result courseChanged(Course course),
     @required Result totalPointsChanged(int totalPoints),
+    @required Result minutesChanged(int minutes),
     @required Result passPointsChanged(int passPoints),
     @required Result addThisQuestion(Question ques),
     @required Result initialize(),
@@ -88,6 +96,7 @@ mixin _$AddQuizFormEvent {
     Result topicChanged(String topic),
     Result courseChanged(Course course),
     Result totalPointsChanged(int totalPoints),
+    Result minutesChanged(int minutes),
     Result passPointsChanged(int passPoints),
     Result addThisQuestion(Question ques),
     Result initialize(),
@@ -100,6 +109,7 @@ mixin _$AddQuizFormEvent {
     @required Result topicChanged(_EvTopicChanged value),
     @required Result courseChanged(_EvCourseChanged value),
     @required Result totalPointsChanged(_EvTotalPointsChanged value),
+    @required Result minutesChanged(_EvMinutesChanged value),
     @required Result passPointsChanged(_EvPassPointsChanged value),
     @required Result addThisQuestion(_EvAddThisQues value),
     @required Result initialize(_EvInitialize value),
@@ -111,6 +121,7 @@ mixin _$AddQuizFormEvent {
     Result topicChanged(_EvTopicChanged value),
     Result courseChanged(_EvCourseChanged value),
     Result totalPointsChanged(_EvTotalPointsChanged value),
+    Result minutesChanged(_EvMinutesChanged value),
     Result passPointsChanged(_EvPassPointsChanged value),
     Result addThisQuestion(_EvAddThisQues value),
     Result initialize(_EvInitialize value),
@@ -200,6 +211,7 @@ class _$_EvTopicChanged implements _EvTopicChanged {
     @required Result topicChanged(String topic),
     @required Result courseChanged(Course course),
     @required Result totalPointsChanged(int totalPoints),
+    @required Result minutesChanged(int minutes),
     @required Result passPointsChanged(int passPoints),
     @required Result addThisQuestion(Question ques),
     @required Result initialize(),
@@ -209,6 +221,7 @@ class _$_EvTopicChanged implements _EvTopicChanged {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -223,6 +236,7 @@ class _$_EvTopicChanged implements _EvTopicChanged {
     Result topicChanged(String topic),
     Result courseChanged(Course course),
     Result totalPointsChanged(int totalPoints),
+    Result minutesChanged(int minutes),
     Result passPointsChanged(int passPoints),
     Result addThisQuestion(Question ques),
     Result initialize(),
@@ -243,6 +257,7 @@ class _$_EvTopicChanged implements _EvTopicChanged {
     @required Result topicChanged(_EvTopicChanged value),
     @required Result courseChanged(_EvCourseChanged value),
     @required Result totalPointsChanged(_EvTotalPointsChanged value),
+    @required Result minutesChanged(_EvMinutesChanged value),
     @required Result passPointsChanged(_EvPassPointsChanged value),
     @required Result addThisQuestion(_EvAddThisQues value),
     @required Result initialize(_EvInitialize value),
@@ -252,6 +267,7 @@ class _$_EvTopicChanged implements _EvTopicChanged {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -266,6 +282,7 @@ class _$_EvTopicChanged implements _EvTopicChanged {
     Result topicChanged(_EvTopicChanged value),
     Result courseChanged(_EvCourseChanged value),
     Result totalPointsChanged(_EvTotalPointsChanged value),
+    Result minutesChanged(_EvMinutesChanged value),
     Result passPointsChanged(_EvPassPointsChanged value),
     Result addThisQuestion(_EvAddThisQues value),
     Result initialize(_EvInitialize value),
@@ -363,6 +380,7 @@ class _$_EvCourseChanged implements _EvCourseChanged {
     @required Result topicChanged(String topic),
     @required Result courseChanged(Course course),
     @required Result totalPointsChanged(int totalPoints),
+    @required Result minutesChanged(int minutes),
     @required Result passPointsChanged(int passPoints),
     @required Result addThisQuestion(Question ques),
     @required Result initialize(),
@@ -372,6 +390,7 @@ class _$_EvCourseChanged implements _EvCourseChanged {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -386,6 +405,7 @@ class _$_EvCourseChanged implements _EvCourseChanged {
     Result topicChanged(String topic),
     Result courseChanged(Course course),
     Result totalPointsChanged(int totalPoints),
+    Result minutesChanged(int minutes),
     Result passPointsChanged(int passPoints),
     Result addThisQuestion(Question ques),
     Result initialize(),
@@ -406,6 +426,7 @@ class _$_EvCourseChanged implements _EvCourseChanged {
     @required Result topicChanged(_EvTopicChanged value),
     @required Result courseChanged(_EvCourseChanged value),
     @required Result totalPointsChanged(_EvTotalPointsChanged value),
+    @required Result minutesChanged(_EvMinutesChanged value),
     @required Result passPointsChanged(_EvPassPointsChanged value),
     @required Result addThisQuestion(_EvAddThisQues value),
     @required Result initialize(_EvInitialize value),
@@ -415,6 +436,7 @@ class _$_EvCourseChanged implements _EvCourseChanged {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -429,6 +451,7 @@ class _$_EvCourseChanged implements _EvCourseChanged {
     Result topicChanged(_EvTopicChanged value),
     Result courseChanged(_EvCourseChanged value),
     Result totalPointsChanged(_EvTotalPointsChanged value),
+    Result minutesChanged(_EvMinutesChanged value),
     Result passPointsChanged(_EvPassPointsChanged value),
     Result addThisQuestion(_EvAddThisQues value),
     Result initialize(_EvInitialize value),
@@ -516,6 +539,7 @@ class _$_EvTotalPointsChanged implements _EvTotalPointsChanged {
     @required Result topicChanged(String topic),
     @required Result courseChanged(Course course),
     @required Result totalPointsChanged(int totalPoints),
+    @required Result minutesChanged(int minutes),
     @required Result passPointsChanged(int passPoints),
     @required Result addThisQuestion(Question ques),
     @required Result initialize(),
@@ -525,6 +549,7 @@ class _$_EvTotalPointsChanged implements _EvTotalPointsChanged {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -539,6 +564,7 @@ class _$_EvTotalPointsChanged implements _EvTotalPointsChanged {
     Result topicChanged(String topic),
     Result courseChanged(Course course),
     Result totalPointsChanged(int totalPoints),
+    Result minutesChanged(int minutes),
     Result passPointsChanged(int passPoints),
     Result addThisQuestion(Question ques),
     Result initialize(),
@@ -559,6 +585,7 @@ class _$_EvTotalPointsChanged implements _EvTotalPointsChanged {
     @required Result topicChanged(_EvTopicChanged value),
     @required Result courseChanged(_EvCourseChanged value),
     @required Result totalPointsChanged(_EvTotalPointsChanged value),
+    @required Result minutesChanged(_EvMinutesChanged value),
     @required Result passPointsChanged(_EvPassPointsChanged value),
     @required Result addThisQuestion(_EvAddThisQues value),
     @required Result initialize(_EvInitialize value),
@@ -568,6 +595,7 @@ class _$_EvTotalPointsChanged implements _EvTotalPointsChanged {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -582,6 +610,7 @@ class _$_EvTotalPointsChanged implements _EvTotalPointsChanged {
     Result topicChanged(_EvTopicChanged value),
     Result courseChanged(_EvCourseChanged value),
     Result totalPointsChanged(_EvTotalPointsChanged value),
+    Result minutesChanged(_EvMinutesChanged value),
     Result passPointsChanged(_EvPassPointsChanged value),
     Result addThisQuestion(_EvAddThisQues value),
     Result initialize(_EvInitialize value),
@@ -603,6 +632,163 @@ abstract class _EvTotalPointsChanged implements AddQuizFormEvent {
 
   int get totalPoints;
   _$EvTotalPointsChangedCopyWith<_EvTotalPointsChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$EvMinutesChangedCopyWith<$Res> {
+  factory _$EvMinutesChangedCopyWith(
+          _EvMinutesChanged value, $Res Function(_EvMinutesChanged) then) =
+      __$EvMinutesChangedCopyWithImpl<$Res>;
+  $Res call({int minutes});
+}
+
+/// @nodoc
+class __$EvMinutesChangedCopyWithImpl<$Res>
+    extends _$AddQuizFormEventCopyWithImpl<$Res>
+    implements _$EvMinutesChangedCopyWith<$Res> {
+  __$EvMinutesChangedCopyWithImpl(
+      _EvMinutesChanged _value, $Res Function(_EvMinutesChanged) _then)
+      : super(_value, (v) => _then(v as _EvMinutesChanged));
+
+  @override
+  _EvMinutesChanged get _value => super._value as _EvMinutesChanged;
+
+  @override
+  $Res call({
+    Object minutes = freezed,
+  }) {
+    return _then(_EvMinutesChanged(
+      minutes == freezed ? _value.minutes : minutes as int,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_EvMinutesChanged implements _EvMinutesChanged {
+  const _$_EvMinutesChanged(this.minutes) : assert(minutes != null);
+
+  @override
+  final int minutes;
+
+  @override
+  String toString() {
+    return 'AddQuizFormEvent.minutesChanged(minutes: $minutes)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _EvMinutesChanged &&
+            (identical(other.minutes, minutes) ||
+                const DeepCollectionEquality().equals(other.minutes, minutes)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(minutes);
+
+  @override
+  _$EvMinutesChangedCopyWith<_EvMinutesChanged> get copyWith =>
+      __$EvMinutesChangedCopyWithImpl<_EvMinutesChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result topicChanged(String topic),
+    @required Result courseChanged(Course course),
+    @required Result totalPointsChanged(int totalPoints),
+    @required Result minutesChanged(int minutes),
+    @required Result passPointsChanged(int passPoints),
+    @required Result addThisQuestion(Question ques),
+    @required Result initialize(),
+    @required Result saveIsClicked(),
+    @required Result deleteIsClicked(Quiz quiz),
+  }) {
+    assert(topicChanged != null);
+    assert(courseChanged != null);
+    assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
+    assert(passPointsChanged != null);
+    assert(addThisQuestion != null);
+    assert(initialize != null);
+    assert(saveIsClicked != null);
+    assert(deleteIsClicked != null);
+    return minutesChanged(minutes);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result topicChanged(String topic),
+    Result courseChanged(Course course),
+    Result totalPointsChanged(int totalPoints),
+    Result minutesChanged(int minutes),
+    Result passPointsChanged(int passPoints),
+    Result addThisQuestion(Question ques),
+    Result initialize(),
+    Result saveIsClicked(),
+    Result deleteIsClicked(Quiz quiz),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (minutesChanged != null) {
+      return minutesChanged(minutes);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result topicChanged(_EvTopicChanged value),
+    @required Result courseChanged(_EvCourseChanged value),
+    @required Result totalPointsChanged(_EvTotalPointsChanged value),
+    @required Result minutesChanged(_EvMinutesChanged value),
+    @required Result passPointsChanged(_EvPassPointsChanged value),
+    @required Result addThisQuestion(_EvAddThisQues value),
+    @required Result initialize(_EvInitialize value),
+    @required Result saveIsClicked(_EvSaveIsClicked value),
+    @required Result deleteIsClicked(_EvDeleteIsClicked value),
+  }) {
+    assert(topicChanged != null);
+    assert(courseChanged != null);
+    assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
+    assert(passPointsChanged != null);
+    assert(addThisQuestion != null);
+    assert(initialize != null);
+    assert(saveIsClicked != null);
+    assert(deleteIsClicked != null);
+    return minutesChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result topicChanged(_EvTopicChanged value),
+    Result courseChanged(_EvCourseChanged value),
+    Result totalPointsChanged(_EvTotalPointsChanged value),
+    Result minutesChanged(_EvMinutesChanged value),
+    Result passPointsChanged(_EvPassPointsChanged value),
+    Result addThisQuestion(_EvAddThisQues value),
+    Result initialize(_EvInitialize value),
+    Result saveIsClicked(_EvSaveIsClicked value),
+    Result deleteIsClicked(_EvDeleteIsClicked value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (minutesChanged != null) {
+      return minutesChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EvMinutesChanged implements AddQuizFormEvent {
+  const factory _EvMinutesChanged(int minutes) = _$_EvMinutesChanged;
+
+  int get minutes;
+  _$EvMinutesChangedCopyWith<_EvMinutesChanged> get copyWith;
 }
 
 /// @nodoc
@@ -670,6 +856,7 @@ class _$_EvPassPointsChanged implements _EvPassPointsChanged {
     @required Result topicChanged(String topic),
     @required Result courseChanged(Course course),
     @required Result totalPointsChanged(int totalPoints),
+    @required Result minutesChanged(int minutes),
     @required Result passPointsChanged(int passPoints),
     @required Result addThisQuestion(Question ques),
     @required Result initialize(),
@@ -679,6 +866,7 @@ class _$_EvPassPointsChanged implements _EvPassPointsChanged {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -693,6 +881,7 @@ class _$_EvPassPointsChanged implements _EvPassPointsChanged {
     Result topicChanged(String topic),
     Result courseChanged(Course course),
     Result totalPointsChanged(int totalPoints),
+    Result minutesChanged(int minutes),
     Result passPointsChanged(int passPoints),
     Result addThisQuestion(Question ques),
     Result initialize(),
@@ -713,6 +902,7 @@ class _$_EvPassPointsChanged implements _EvPassPointsChanged {
     @required Result topicChanged(_EvTopicChanged value),
     @required Result courseChanged(_EvCourseChanged value),
     @required Result totalPointsChanged(_EvTotalPointsChanged value),
+    @required Result minutesChanged(_EvMinutesChanged value),
     @required Result passPointsChanged(_EvPassPointsChanged value),
     @required Result addThisQuestion(_EvAddThisQues value),
     @required Result initialize(_EvInitialize value),
@@ -722,6 +912,7 @@ class _$_EvPassPointsChanged implements _EvPassPointsChanged {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -736,6 +927,7 @@ class _$_EvPassPointsChanged implements _EvPassPointsChanged {
     Result topicChanged(_EvTopicChanged value),
     Result courseChanged(_EvCourseChanged value),
     Result totalPointsChanged(_EvTotalPointsChanged value),
+    Result minutesChanged(_EvMinutesChanged value),
     Result passPointsChanged(_EvPassPointsChanged value),
     Result addThisQuestion(_EvAddThisQues value),
     Result initialize(_EvInitialize value),
@@ -833,6 +1025,7 @@ class _$_EvAddThisQues implements _EvAddThisQues {
     @required Result topicChanged(String topic),
     @required Result courseChanged(Course course),
     @required Result totalPointsChanged(int totalPoints),
+    @required Result minutesChanged(int minutes),
     @required Result passPointsChanged(int passPoints),
     @required Result addThisQuestion(Question ques),
     @required Result initialize(),
@@ -842,6 +1035,7 @@ class _$_EvAddThisQues implements _EvAddThisQues {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -856,6 +1050,7 @@ class _$_EvAddThisQues implements _EvAddThisQues {
     Result topicChanged(String topic),
     Result courseChanged(Course course),
     Result totalPointsChanged(int totalPoints),
+    Result minutesChanged(int minutes),
     Result passPointsChanged(int passPoints),
     Result addThisQuestion(Question ques),
     Result initialize(),
@@ -876,6 +1071,7 @@ class _$_EvAddThisQues implements _EvAddThisQues {
     @required Result topicChanged(_EvTopicChanged value),
     @required Result courseChanged(_EvCourseChanged value),
     @required Result totalPointsChanged(_EvTotalPointsChanged value),
+    @required Result minutesChanged(_EvMinutesChanged value),
     @required Result passPointsChanged(_EvPassPointsChanged value),
     @required Result addThisQuestion(_EvAddThisQues value),
     @required Result initialize(_EvInitialize value),
@@ -885,6 +1081,7 @@ class _$_EvAddThisQues implements _EvAddThisQues {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -899,6 +1096,7 @@ class _$_EvAddThisQues implements _EvAddThisQues {
     Result topicChanged(_EvTopicChanged value),
     Result courseChanged(_EvCourseChanged value),
     Result totalPointsChanged(_EvTotalPointsChanged value),
+    Result minutesChanged(_EvMinutesChanged value),
     Result passPointsChanged(_EvPassPointsChanged value),
     Result addThisQuestion(_EvAddThisQues value),
     Result initialize(_EvInitialize value),
@@ -963,6 +1161,7 @@ class _$_EvInitialize implements _EvInitialize {
     @required Result topicChanged(String topic),
     @required Result courseChanged(Course course),
     @required Result totalPointsChanged(int totalPoints),
+    @required Result minutesChanged(int minutes),
     @required Result passPointsChanged(int passPoints),
     @required Result addThisQuestion(Question ques),
     @required Result initialize(),
@@ -972,6 +1171,7 @@ class _$_EvInitialize implements _EvInitialize {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -986,6 +1186,7 @@ class _$_EvInitialize implements _EvInitialize {
     Result topicChanged(String topic),
     Result courseChanged(Course course),
     Result totalPointsChanged(int totalPoints),
+    Result minutesChanged(int minutes),
     Result passPointsChanged(int passPoints),
     Result addThisQuestion(Question ques),
     Result initialize(),
@@ -1006,6 +1207,7 @@ class _$_EvInitialize implements _EvInitialize {
     @required Result topicChanged(_EvTopicChanged value),
     @required Result courseChanged(_EvCourseChanged value),
     @required Result totalPointsChanged(_EvTotalPointsChanged value),
+    @required Result minutesChanged(_EvMinutesChanged value),
     @required Result passPointsChanged(_EvPassPointsChanged value),
     @required Result addThisQuestion(_EvAddThisQues value),
     @required Result initialize(_EvInitialize value),
@@ -1015,6 +1217,7 @@ class _$_EvInitialize implements _EvInitialize {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -1029,6 +1232,7 @@ class _$_EvInitialize implements _EvInitialize {
     Result topicChanged(_EvTopicChanged value),
     Result courseChanged(_EvCourseChanged value),
     Result totalPointsChanged(_EvTotalPointsChanged value),
+    Result minutesChanged(_EvMinutesChanged value),
     Result passPointsChanged(_EvPassPointsChanged value),
     Result addThisQuestion(_EvAddThisQues value),
     Result initialize(_EvInitialize value),
@@ -1090,6 +1294,7 @@ class _$_EvSaveIsClicked implements _EvSaveIsClicked {
     @required Result topicChanged(String topic),
     @required Result courseChanged(Course course),
     @required Result totalPointsChanged(int totalPoints),
+    @required Result minutesChanged(int minutes),
     @required Result passPointsChanged(int passPoints),
     @required Result addThisQuestion(Question ques),
     @required Result initialize(),
@@ -1099,6 +1304,7 @@ class _$_EvSaveIsClicked implements _EvSaveIsClicked {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -1113,6 +1319,7 @@ class _$_EvSaveIsClicked implements _EvSaveIsClicked {
     Result topicChanged(String topic),
     Result courseChanged(Course course),
     Result totalPointsChanged(int totalPoints),
+    Result minutesChanged(int minutes),
     Result passPointsChanged(int passPoints),
     Result addThisQuestion(Question ques),
     Result initialize(),
@@ -1133,6 +1340,7 @@ class _$_EvSaveIsClicked implements _EvSaveIsClicked {
     @required Result topicChanged(_EvTopicChanged value),
     @required Result courseChanged(_EvCourseChanged value),
     @required Result totalPointsChanged(_EvTotalPointsChanged value),
+    @required Result minutesChanged(_EvMinutesChanged value),
     @required Result passPointsChanged(_EvPassPointsChanged value),
     @required Result addThisQuestion(_EvAddThisQues value),
     @required Result initialize(_EvInitialize value),
@@ -1142,6 +1350,7 @@ class _$_EvSaveIsClicked implements _EvSaveIsClicked {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -1156,6 +1365,7 @@ class _$_EvSaveIsClicked implements _EvSaveIsClicked {
     Result topicChanged(_EvTopicChanged value),
     Result courseChanged(_EvCourseChanged value),
     Result totalPointsChanged(_EvTotalPointsChanged value),
+    Result minutesChanged(_EvMinutesChanged value),
     Result passPointsChanged(_EvPassPointsChanged value),
     Result addThisQuestion(_EvAddThisQues value),
     Result initialize(_EvInitialize value),
@@ -1250,6 +1460,7 @@ class _$_EvDeleteIsClicked implements _EvDeleteIsClicked {
     @required Result topicChanged(String topic),
     @required Result courseChanged(Course course),
     @required Result totalPointsChanged(int totalPoints),
+    @required Result minutesChanged(int minutes),
     @required Result passPointsChanged(int passPoints),
     @required Result addThisQuestion(Question ques),
     @required Result initialize(),
@@ -1259,6 +1470,7 @@ class _$_EvDeleteIsClicked implements _EvDeleteIsClicked {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -1273,6 +1485,7 @@ class _$_EvDeleteIsClicked implements _EvDeleteIsClicked {
     Result topicChanged(String topic),
     Result courseChanged(Course course),
     Result totalPointsChanged(int totalPoints),
+    Result minutesChanged(int minutes),
     Result passPointsChanged(int passPoints),
     Result addThisQuestion(Question ques),
     Result initialize(),
@@ -1293,6 +1506,7 @@ class _$_EvDeleteIsClicked implements _EvDeleteIsClicked {
     @required Result topicChanged(_EvTopicChanged value),
     @required Result courseChanged(_EvCourseChanged value),
     @required Result totalPointsChanged(_EvTotalPointsChanged value),
+    @required Result minutesChanged(_EvMinutesChanged value),
     @required Result passPointsChanged(_EvPassPointsChanged value),
     @required Result addThisQuestion(_EvAddThisQues value),
     @required Result initialize(_EvInitialize value),
@@ -1302,6 +1516,7 @@ class _$_EvDeleteIsClicked implements _EvDeleteIsClicked {
     assert(topicChanged != null);
     assert(courseChanged != null);
     assert(totalPointsChanged != null);
+    assert(minutesChanged != null);
     assert(passPointsChanged != null);
     assert(addThisQuestion != null);
     assert(initialize != null);
@@ -1316,6 +1531,7 @@ class _$_EvDeleteIsClicked implements _EvDeleteIsClicked {
     Result topicChanged(_EvTopicChanged value),
     Result courseChanged(_EvCourseChanged value),
     Result totalPointsChanged(_EvTotalPointsChanged value),
+    Result minutesChanged(_EvMinutesChanged value),
     Result passPointsChanged(_EvPassPointsChanged value),
     Result addThisQuestion(_EvAddThisQues value),
     Result initialize(_EvInitialize value),

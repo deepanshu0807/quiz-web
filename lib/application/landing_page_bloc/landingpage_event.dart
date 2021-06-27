@@ -5,6 +5,7 @@ abstract class LandingpageEvent with _$LandingpageEvent {
   const factory LandingpageEvent.dashboardSelected() = EvDashboardSelected;
   const factory LandingpageEvent.courseSelected() = EVCourseSelected;
   const factory LandingpageEvent.quizSelected() = EvQuizSelected;
+  const factory LandingpageEvent.historySelected() = EvHistorySelected;
   const factory LandingpageEvent.leaderboardsSelected() =
       EvLeaderboardsSelected;
 }

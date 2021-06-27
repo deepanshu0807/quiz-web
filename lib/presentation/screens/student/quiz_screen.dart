@@ -32,7 +32,7 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   void initState() {
     super.initState();
-    minutes = 10;
+    minutes = widget.quiz.minutes;
     seconds = minutes * 60;
     startTimer();
   }
@@ -55,6 +55,15 @@ class _QuizScreenState extends State<QuizScreen> {
           ..onDone(() {
             setState(() {
               seconds = 0;
+            });
+            context
+                .read<SubmissionFormBloc>()
+                .add(SubmissionFormEvent.scoreChanged(totalscore));
+            Future.delayed(Duration(seconds: 1), () {
+              context
+                  .read<SubmissionFormBloc>()
+                  .add(SubmissionFormEvent.saveIsClicked());
+              Navigator.of(context).pop();
             });
           });
   }
@@ -150,6 +159,14 @@ class _QuizScreenState extends State<QuizScreen> {
                                   verticalSpaceSmall,
                                   OptionsWidget(
                                     onTap: () {
+                                      if (index == 0) {
+                                        context.read<SubmissionFormBloc>().add(
+                                            SubmissionFormEvent.quizChanged(
+                                                widget.quiz));
+                                        context.read<SubmissionFormBloc>().add(
+                                            SubmissionFormEvent.userChanged(
+                                                widget.user));
+                                      }
                                       setState(() {
                                         if (thisq.optionB == thisq.answer) {
                                           totalscore =
@@ -168,6 +185,14 @@ class _QuizScreenState extends State<QuizScreen> {
                                   verticalSpaceSmall,
                                   OptionsWidget(
                                     onTap: () {
+                                      if (index == 0) {
+                                        context.read<SubmissionFormBloc>().add(
+                                            SubmissionFormEvent.quizChanged(
+                                                widget.quiz));
+                                        context.read<SubmissionFormBloc>().add(
+                                            SubmissionFormEvent.userChanged(
+                                                widget.user));
+                                      }
                                       setState(() {
                                         if (thisq.optionC == thisq.answer) {
                                           totalscore =
@@ -186,6 +211,14 @@ class _QuizScreenState extends State<QuizScreen> {
                                   verticalSpaceSmall,
                                   OptionsWidget(
                                     onTap: () {
+                                      if (index == 0) {
+                                        context.read<SubmissionFormBloc>().add(
+                                            SubmissionFormEvent.quizChanged(
+                                                widget.quiz));
+                                        context.read<SubmissionFormBloc>().add(
+                                            SubmissionFormEvent.userChanged(
+                                                widget.user));
+                                      }
                                       setState(() {
                                         if (thisq.optionD == thisq.answer) {
                                           totalscore =

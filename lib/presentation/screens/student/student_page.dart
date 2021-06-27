@@ -1,7 +1,12 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:quiz_shared/domain/user/user.dart';
 import 'package:quiz_shared/quiz_shared.dart';
 import 'package:quiz_web/application/landing_page_bloc/landingpage_bloc.dart';
+import 'package:quiz_web/presentation/screens/leaderboards.dart';
+import 'package:quiz_web/presentation/screens/student/history.dart';
+import 'package:quiz_web/presentation/screens/student/student_dashboard.dart';
 import 'package:quiz_web/presentation/screens/student/student_quiz.dart';
 import 'package:quiz_web/presentation/screens/teacher/teacher_course.dart';
 import 'package:quiz_web/presentation/utils/utility.dart';
@@ -21,11 +26,18 @@ class StudentPage extends StatelessWidget {
         return Container(
           padding: EdgeInsets.all(40),
           child: state.maybeMap(
-            dashboard: (_) => NoAccessWidget(),
+            dashboard: (_) => StudentDashboard(
+              user: user,
+            ),
             quiz: (_) => StudentQuizPage(
               user: user,
             ),
-            leaderboards: (_) => NoAccessWidget(),
+            leaderboards: (_) => LeaderBoards(
+              user: user,
+            ),
+            history: (_) => History(
+              user: user,
+            ),
             orElse: () => NoAccessWidget(),
           ),
         );

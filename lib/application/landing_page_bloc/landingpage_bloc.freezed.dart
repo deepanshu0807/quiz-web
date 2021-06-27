@@ -29,6 +29,11 @@ class _$LandingpageEventTearOff {
   }
 
 // ignore: unused_element
+  EvHistorySelected historySelected() {
+    return const EvHistorySelected();
+  }
+
+// ignore: unused_element
   EvLeaderboardsSelected leaderboardsSelected() {
     return const EvLeaderboardsSelected();
   }
@@ -45,6 +50,7 @@ mixin _$LandingpageEvent {
     @required Result dashboardSelected(),
     @required Result courseSelected(),
     @required Result quizSelected(),
+    @required Result historySelected(),
     @required Result leaderboardsSelected(),
   });
   @optionalTypeArgs
@@ -52,6 +58,7 @@ mixin _$LandingpageEvent {
     Result dashboardSelected(),
     Result courseSelected(),
     Result quizSelected(),
+    Result historySelected(),
     Result leaderboardsSelected(),
     @required Result orElse(),
   });
@@ -60,6 +67,7 @@ mixin _$LandingpageEvent {
     @required Result dashboardSelected(EvDashboardSelected value),
     @required Result courseSelected(EVCourseSelected value),
     @required Result quizSelected(EvQuizSelected value),
+    @required Result historySelected(EvHistorySelected value),
     @required Result leaderboardsSelected(EvLeaderboardsSelected value),
   });
   @optionalTypeArgs
@@ -67,6 +75,7 @@ mixin _$LandingpageEvent {
     Result dashboardSelected(EvDashboardSelected value),
     Result courseSelected(EVCourseSelected value),
     Result quizSelected(EvQuizSelected value),
+    Result historySelected(EvHistorySelected value),
     Result leaderboardsSelected(EvLeaderboardsSelected value),
     @required Result orElse(),
   });
@@ -131,11 +140,13 @@ class _$EvDashboardSelected implements EvDashboardSelected {
     @required Result dashboardSelected(),
     @required Result courseSelected(),
     @required Result quizSelected(),
+    @required Result historySelected(),
     @required Result leaderboardsSelected(),
   }) {
     assert(dashboardSelected != null);
     assert(courseSelected != null);
     assert(quizSelected != null);
+    assert(historySelected != null);
     assert(leaderboardsSelected != null);
     return dashboardSelected();
   }
@@ -146,6 +157,7 @@ class _$EvDashboardSelected implements EvDashboardSelected {
     Result dashboardSelected(),
     Result courseSelected(),
     Result quizSelected(),
+    Result historySelected(),
     Result leaderboardsSelected(),
     @required Result orElse(),
   }) {
@@ -162,11 +174,13 @@ class _$EvDashboardSelected implements EvDashboardSelected {
     @required Result dashboardSelected(EvDashboardSelected value),
     @required Result courseSelected(EVCourseSelected value),
     @required Result quizSelected(EvQuizSelected value),
+    @required Result historySelected(EvHistorySelected value),
     @required Result leaderboardsSelected(EvLeaderboardsSelected value),
   }) {
     assert(dashboardSelected != null);
     assert(courseSelected != null);
     assert(quizSelected != null);
+    assert(historySelected != null);
     assert(leaderboardsSelected != null);
     return dashboardSelected(this);
   }
@@ -177,6 +191,7 @@ class _$EvDashboardSelected implements EvDashboardSelected {
     Result dashboardSelected(EvDashboardSelected value),
     Result courseSelected(EVCourseSelected value),
     Result quizSelected(EvQuizSelected value),
+    Result historySelected(EvHistorySelected value),
     Result leaderboardsSelected(EvLeaderboardsSelected value),
     @required Result orElse(),
   }) {
@@ -234,11 +249,13 @@ class _$EVCourseSelected implements EVCourseSelected {
     @required Result dashboardSelected(),
     @required Result courseSelected(),
     @required Result quizSelected(),
+    @required Result historySelected(),
     @required Result leaderboardsSelected(),
   }) {
     assert(dashboardSelected != null);
     assert(courseSelected != null);
     assert(quizSelected != null);
+    assert(historySelected != null);
     assert(leaderboardsSelected != null);
     return courseSelected();
   }
@@ -249,6 +266,7 @@ class _$EVCourseSelected implements EVCourseSelected {
     Result dashboardSelected(),
     Result courseSelected(),
     Result quizSelected(),
+    Result historySelected(),
     Result leaderboardsSelected(),
     @required Result orElse(),
   }) {
@@ -265,11 +283,13 @@ class _$EVCourseSelected implements EVCourseSelected {
     @required Result dashboardSelected(EvDashboardSelected value),
     @required Result courseSelected(EVCourseSelected value),
     @required Result quizSelected(EvQuizSelected value),
+    @required Result historySelected(EvHistorySelected value),
     @required Result leaderboardsSelected(EvLeaderboardsSelected value),
   }) {
     assert(dashboardSelected != null);
     assert(courseSelected != null);
     assert(quizSelected != null);
+    assert(historySelected != null);
     assert(leaderboardsSelected != null);
     return courseSelected(this);
   }
@@ -280,6 +300,7 @@ class _$EVCourseSelected implements EVCourseSelected {
     Result dashboardSelected(EvDashboardSelected value),
     Result courseSelected(EVCourseSelected value),
     Result quizSelected(EvQuizSelected value),
+    Result historySelected(EvHistorySelected value),
     Result leaderboardsSelected(EvLeaderboardsSelected value),
     @required Result orElse(),
   }) {
@@ -337,11 +358,13 @@ class _$EvQuizSelected implements EvQuizSelected {
     @required Result dashboardSelected(),
     @required Result courseSelected(),
     @required Result quizSelected(),
+    @required Result historySelected(),
     @required Result leaderboardsSelected(),
   }) {
     assert(dashboardSelected != null);
     assert(courseSelected != null);
     assert(quizSelected != null);
+    assert(historySelected != null);
     assert(leaderboardsSelected != null);
     return quizSelected();
   }
@@ -352,6 +375,7 @@ class _$EvQuizSelected implements EvQuizSelected {
     Result dashboardSelected(),
     Result courseSelected(),
     Result quizSelected(),
+    Result historySelected(),
     Result leaderboardsSelected(),
     @required Result orElse(),
   }) {
@@ -368,11 +392,13 @@ class _$EvQuizSelected implements EvQuizSelected {
     @required Result dashboardSelected(EvDashboardSelected value),
     @required Result courseSelected(EVCourseSelected value),
     @required Result quizSelected(EvQuizSelected value),
+    @required Result historySelected(EvHistorySelected value),
     @required Result leaderboardsSelected(EvLeaderboardsSelected value),
   }) {
     assert(dashboardSelected != null);
     assert(courseSelected != null);
     assert(quizSelected != null);
+    assert(historySelected != null);
     assert(leaderboardsSelected != null);
     return quizSelected(this);
   }
@@ -383,6 +409,7 @@ class _$EvQuizSelected implements EvQuizSelected {
     Result dashboardSelected(EvDashboardSelected value),
     Result courseSelected(EVCourseSelected value),
     Result quizSelected(EvQuizSelected value),
+    Result historySelected(EvHistorySelected value),
     Result leaderboardsSelected(EvLeaderboardsSelected value),
     @required Result orElse(),
   }) {
@@ -396,6 +423,115 @@ class _$EvQuizSelected implements EvQuizSelected {
 
 abstract class EvQuizSelected implements LandingpageEvent {
   const factory EvQuizSelected() = _$EvQuizSelected;
+}
+
+/// @nodoc
+abstract class $EvHistorySelectedCopyWith<$Res> {
+  factory $EvHistorySelectedCopyWith(
+          EvHistorySelected value, $Res Function(EvHistorySelected) then) =
+      _$EvHistorySelectedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$EvHistorySelectedCopyWithImpl<$Res>
+    extends _$LandingpageEventCopyWithImpl<$Res>
+    implements $EvHistorySelectedCopyWith<$Res> {
+  _$EvHistorySelectedCopyWithImpl(
+      EvHistorySelected _value, $Res Function(EvHistorySelected) _then)
+      : super(_value, (v) => _then(v as EvHistorySelected));
+
+  @override
+  EvHistorySelected get _value => super._value as EvHistorySelected;
+}
+
+/// @nodoc
+class _$EvHistorySelected implements EvHistorySelected {
+  const _$EvHistorySelected();
+
+  @override
+  String toString() {
+    return 'LandingpageEvent.historySelected()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is EvHistorySelected);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result dashboardSelected(),
+    @required Result courseSelected(),
+    @required Result quizSelected(),
+    @required Result historySelected(),
+    @required Result leaderboardsSelected(),
+  }) {
+    assert(dashboardSelected != null);
+    assert(courseSelected != null);
+    assert(quizSelected != null);
+    assert(historySelected != null);
+    assert(leaderboardsSelected != null);
+    return historySelected();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result dashboardSelected(),
+    Result courseSelected(),
+    Result quizSelected(),
+    Result historySelected(),
+    Result leaderboardsSelected(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (historySelected != null) {
+      return historySelected();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result dashboardSelected(EvDashboardSelected value),
+    @required Result courseSelected(EVCourseSelected value),
+    @required Result quizSelected(EvQuizSelected value),
+    @required Result historySelected(EvHistorySelected value),
+    @required Result leaderboardsSelected(EvLeaderboardsSelected value),
+  }) {
+    assert(dashboardSelected != null);
+    assert(courseSelected != null);
+    assert(quizSelected != null);
+    assert(historySelected != null);
+    assert(leaderboardsSelected != null);
+    return historySelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result dashboardSelected(EvDashboardSelected value),
+    Result courseSelected(EVCourseSelected value),
+    Result quizSelected(EvQuizSelected value),
+    Result historySelected(EvHistorySelected value),
+    Result leaderboardsSelected(EvLeaderboardsSelected value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (historySelected != null) {
+      return historySelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EvHistorySelected implements LandingpageEvent {
+  const factory EvHistorySelected() = _$EvHistorySelected;
 }
 
 /// @nodoc
@@ -440,11 +576,13 @@ class _$EvLeaderboardsSelected implements EvLeaderboardsSelected {
     @required Result dashboardSelected(),
     @required Result courseSelected(),
     @required Result quizSelected(),
+    @required Result historySelected(),
     @required Result leaderboardsSelected(),
   }) {
     assert(dashboardSelected != null);
     assert(courseSelected != null);
     assert(quizSelected != null);
+    assert(historySelected != null);
     assert(leaderboardsSelected != null);
     return leaderboardsSelected();
   }
@@ -455,6 +593,7 @@ class _$EvLeaderboardsSelected implements EvLeaderboardsSelected {
     Result dashboardSelected(),
     Result courseSelected(),
     Result quizSelected(),
+    Result historySelected(),
     Result leaderboardsSelected(),
     @required Result orElse(),
   }) {
@@ -471,11 +610,13 @@ class _$EvLeaderboardsSelected implements EvLeaderboardsSelected {
     @required Result dashboardSelected(EvDashboardSelected value),
     @required Result courseSelected(EVCourseSelected value),
     @required Result quizSelected(EvQuizSelected value),
+    @required Result historySelected(EvHistorySelected value),
     @required Result leaderboardsSelected(EvLeaderboardsSelected value),
   }) {
     assert(dashboardSelected != null);
     assert(courseSelected != null);
     assert(quizSelected != null);
+    assert(historySelected != null);
     assert(leaderboardsSelected != null);
     return leaderboardsSelected(this);
   }
@@ -486,6 +627,7 @@ class _$EvLeaderboardsSelected implements EvLeaderboardsSelected {
     Result dashboardSelected(EvDashboardSelected value),
     Result courseSelected(EVCourseSelected value),
     Result quizSelected(EvQuizSelected value),
+    Result historySelected(EvHistorySelected value),
     Result leaderboardsSelected(EvLeaderboardsSelected value),
     @required Result orElse(),
   }) {
@@ -521,6 +663,11 @@ class _$LandingpageStateTearOff {
   }
 
 // ignore: unused_element
+  _StHistory history() {
+    return const _StHistory();
+  }
+
+// ignore: unused_element
   _StLeaderboards leaderboards() {
     return const _StLeaderboards();
   }
@@ -537,6 +684,7 @@ mixin _$LandingpageState {
     @required Result dashboard(),
     @required Result course(),
     @required Result quiz(),
+    @required Result history(),
     @required Result leaderboards(),
   });
   @optionalTypeArgs
@@ -544,6 +692,7 @@ mixin _$LandingpageState {
     Result dashboard(),
     Result course(),
     Result quiz(),
+    Result history(),
     Result leaderboards(),
     @required Result orElse(),
   });
@@ -552,6 +701,7 @@ mixin _$LandingpageState {
     @required Result dashboard(_StDashBoard value),
     @required Result course(_StCourse value),
     @required Result quiz(_StQuiz value),
+    @required Result history(_StHistory value),
     @required Result leaderboards(_StLeaderboards value),
   });
   @optionalTypeArgs
@@ -559,6 +709,7 @@ mixin _$LandingpageState {
     Result dashboard(_StDashBoard value),
     Result course(_StCourse value),
     Result quiz(_StQuiz value),
+    Result history(_StHistory value),
     Result leaderboards(_StLeaderboards value),
     @required Result orElse(),
   });
@@ -623,11 +774,13 @@ class _$_StDashBoard implements _StDashBoard {
     @required Result dashboard(),
     @required Result course(),
     @required Result quiz(),
+    @required Result history(),
     @required Result leaderboards(),
   }) {
     assert(dashboard != null);
     assert(course != null);
     assert(quiz != null);
+    assert(history != null);
     assert(leaderboards != null);
     return dashboard();
   }
@@ -638,6 +791,7 @@ class _$_StDashBoard implements _StDashBoard {
     Result dashboard(),
     Result course(),
     Result quiz(),
+    Result history(),
     Result leaderboards(),
     @required Result orElse(),
   }) {
@@ -654,11 +808,13 @@ class _$_StDashBoard implements _StDashBoard {
     @required Result dashboard(_StDashBoard value),
     @required Result course(_StCourse value),
     @required Result quiz(_StQuiz value),
+    @required Result history(_StHistory value),
     @required Result leaderboards(_StLeaderboards value),
   }) {
     assert(dashboard != null);
     assert(course != null);
     assert(quiz != null);
+    assert(history != null);
     assert(leaderboards != null);
     return dashboard(this);
   }
@@ -669,6 +825,7 @@ class _$_StDashBoard implements _StDashBoard {
     Result dashboard(_StDashBoard value),
     Result course(_StCourse value),
     Result quiz(_StQuiz value),
+    Result history(_StHistory value),
     Result leaderboards(_StLeaderboards value),
     @required Result orElse(),
   }) {
@@ -723,11 +880,13 @@ class _$_StCourse implements _StCourse {
     @required Result dashboard(),
     @required Result course(),
     @required Result quiz(),
+    @required Result history(),
     @required Result leaderboards(),
   }) {
     assert(dashboard != null);
     assert(course != null);
     assert(quiz != null);
+    assert(history != null);
     assert(leaderboards != null);
     return course();
   }
@@ -738,6 +897,7 @@ class _$_StCourse implements _StCourse {
     Result dashboard(),
     Result course(),
     Result quiz(),
+    Result history(),
     Result leaderboards(),
     @required Result orElse(),
   }) {
@@ -754,11 +914,13 @@ class _$_StCourse implements _StCourse {
     @required Result dashboard(_StDashBoard value),
     @required Result course(_StCourse value),
     @required Result quiz(_StQuiz value),
+    @required Result history(_StHistory value),
     @required Result leaderboards(_StLeaderboards value),
   }) {
     assert(dashboard != null);
     assert(course != null);
     assert(quiz != null);
+    assert(history != null);
     assert(leaderboards != null);
     return course(this);
   }
@@ -769,6 +931,7 @@ class _$_StCourse implements _StCourse {
     Result dashboard(_StDashBoard value),
     Result course(_StCourse value),
     Result quiz(_StQuiz value),
+    Result history(_StHistory value),
     Result leaderboards(_StLeaderboards value),
     @required Result orElse(),
   }) {
@@ -823,11 +986,13 @@ class _$_StQuiz implements _StQuiz {
     @required Result dashboard(),
     @required Result course(),
     @required Result quiz(),
+    @required Result history(),
     @required Result leaderboards(),
   }) {
     assert(dashboard != null);
     assert(course != null);
     assert(quiz != null);
+    assert(history != null);
     assert(leaderboards != null);
     return quiz();
   }
@@ -838,6 +1003,7 @@ class _$_StQuiz implements _StQuiz {
     Result dashboard(),
     Result course(),
     Result quiz(),
+    Result history(),
     Result leaderboards(),
     @required Result orElse(),
   }) {
@@ -854,11 +1020,13 @@ class _$_StQuiz implements _StQuiz {
     @required Result dashboard(_StDashBoard value),
     @required Result course(_StCourse value),
     @required Result quiz(_StQuiz value),
+    @required Result history(_StHistory value),
     @required Result leaderboards(_StLeaderboards value),
   }) {
     assert(dashboard != null);
     assert(course != null);
     assert(quiz != null);
+    assert(history != null);
     assert(leaderboards != null);
     return quiz(this);
   }
@@ -869,6 +1037,7 @@ class _$_StQuiz implements _StQuiz {
     Result dashboard(_StDashBoard value),
     Result course(_StCourse value),
     Result quiz(_StQuiz value),
+    Result history(_StHistory value),
     Result leaderboards(_StLeaderboards value),
     @required Result orElse(),
   }) {
@@ -882,6 +1051,114 @@ class _$_StQuiz implements _StQuiz {
 
 abstract class _StQuiz implements LandingpageState {
   const factory _StQuiz() = _$_StQuiz;
+}
+
+/// @nodoc
+abstract class _$StHistoryCopyWith<$Res> {
+  factory _$StHistoryCopyWith(
+          _StHistory value, $Res Function(_StHistory) then) =
+      __$StHistoryCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$StHistoryCopyWithImpl<$Res>
+    extends _$LandingpageStateCopyWithImpl<$Res>
+    implements _$StHistoryCopyWith<$Res> {
+  __$StHistoryCopyWithImpl(_StHistory _value, $Res Function(_StHistory) _then)
+      : super(_value, (v) => _then(v as _StHistory));
+
+  @override
+  _StHistory get _value => super._value as _StHistory;
+}
+
+/// @nodoc
+class _$_StHistory implements _StHistory {
+  const _$_StHistory();
+
+  @override
+  String toString() {
+    return 'LandingpageState.history()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _StHistory);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result dashboard(),
+    @required Result course(),
+    @required Result quiz(),
+    @required Result history(),
+    @required Result leaderboards(),
+  }) {
+    assert(dashboard != null);
+    assert(course != null);
+    assert(quiz != null);
+    assert(history != null);
+    assert(leaderboards != null);
+    return history();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result dashboard(),
+    Result course(),
+    Result quiz(),
+    Result history(),
+    Result leaderboards(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (history != null) {
+      return history();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result dashboard(_StDashBoard value),
+    @required Result course(_StCourse value),
+    @required Result quiz(_StQuiz value),
+    @required Result history(_StHistory value),
+    @required Result leaderboards(_StLeaderboards value),
+  }) {
+    assert(dashboard != null);
+    assert(course != null);
+    assert(quiz != null);
+    assert(history != null);
+    assert(leaderboards != null);
+    return history(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result dashboard(_StDashBoard value),
+    Result course(_StCourse value),
+    Result quiz(_StQuiz value),
+    Result history(_StHistory value),
+    Result leaderboards(_StLeaderboards value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (history != null) {
+      return history(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StHistory implements LandingpageState {
+  const factory _StHistory() = _$_StHistory;
 }
 
 /// @nodoc
@@ -926,11 +1203,13 @@ class _$_StLeaderboards implements _StLeaderboards {
     @required Result dashboard(),
     @required Result course(),
     @required Result quiz(),
+    @required Result history(),
     @required Result leaderboards(),
   }) {
     assert(dashboard != null);
     assert(course != null);
     assert(quiz != null);
+    assert(history != null);
     assert(leaderboards != null);
     return leaderboards();
   }
@@ -941,6 +1220,7 @@ class _$_StLeaderboards implements _StLeaderboards {
     Result dashboard(),
     Result course(),
     Result quiz(),
+    Result history(),
     Result leaderboards(),
     @required Result orElse(),
   }) {
@@ -957,11 +1237,13 @@ class _$_StLeaderboards implements _StLeaderboards {
     @required Result dashboard(_StDashBoard value),
     @required Result course(_StCourse value),
     @required Result quiz(_StQuiz value),
+    @required Result history(_StHistory value),
     @required Result leaderboards(_StLeaderboards value),
   }) {
     assert(dashboard != null);
     assert(course != null);
     assert(quiz != null);
+    assert(history != null);
     assert(leaderboards != null);
     return leaderboards(this);
   }
@@ -972,6 +1254,7 @@ class _$_StLeaderboards implements _StLeaderboards {
     Result dashboard(_StDashBoard value),
     Result course(_StCourse value),
     Result quiz(_StQuiz value),
+    Result history(_StHistory value),
     Result leaderboards(_StLeaderboards value),
     @required Result orElse(),
   }) {

@@ -7,6 +7,8 @@ abstract class AddQuizFormEvent with _$AddQuizFormEvent {
       _EvCourseChanged;
   const factory AddQuizFormEvent.totalPointsChanged(int totalPoints) =
       _EvTotalPointsChanged;
+  const factory AddQuizFormEvent.minutesChanged(int minutes) =
+      _EvMinutesChanged;
   const factory AddQuizFormEvent.passPointsChanged(int passPoints) =
       _EvPassPointsChanged;
 

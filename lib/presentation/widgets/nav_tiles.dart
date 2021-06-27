@@ -72,6 +72,7 @@ class _NavTilesState extends State<NavTiles> {
                       overflow: TextOverflow.fade,
                       softWrap: true,
                       style: text30.copyWith(
+                        fontSize: 25.sp,
                         color: widget.isSelected || isHover
                             ? Colors.black
                             : Colors.grey[800],

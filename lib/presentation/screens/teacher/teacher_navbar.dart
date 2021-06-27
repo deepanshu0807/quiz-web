@@ -52,7 +52,7 @@ class TeacherNavbar extends StatelessWidget {
                               .add(const LandingpageEvent.dashboardSelected());
                         },
                       ),
-                      verticalSpaceLarge,
+                      verticalSpaceMedium30,
                       NavTiles(
                         iconAssetName: Icons.menu_book_sharp,
                         text: "Course",
@@ -64,7 +64,7 @@ class TeacherNavbar extends StatelessWidget {
                               .add(const LandingpageEvent.courseSelected());
                         },
                       ),
-                      verticalSpaceLarge,
+                      verticalSpaceMedium30,
                       NavTiles(
                         iconAssetName: Icons.leaderboard_rounded,
                         text: "Leaderboards",
